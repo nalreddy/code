@@ -1,0 +1,434 @@
+c links
+
+ linkers
+ 
+file:///C:/Users/nvv/Downloads/11-linking.pdf
+
+
+http://stackoverflow.com/questions/17637437/using-the-linux-minix-source-code-to-understand-how-the-os-is-written-and-eventu
+http://mikeos.berlios.de/
+http://wiki.osdev.org/Main_Page
+http://www.freertos.org/
+https://github.com/kevinsa5/KevinOS
+
+
+cpu and numa ,free socket affinity
+
+http://www.glennklockwood.com/comp/affinity.php
+http://lse.sourceforge.net/numa/faq/
+
+
+OS_DEV
+
+http://wiki.osdev.org/
+
+Linux boot process
+
+http://www.ibm.com/developerworks/library/l-linuxboot/index.html
+
+Jun 2008: How Computers Boot Up by Gustavo Duarte.
+Jun 2008:The Kernel Boot Process by Gustavo Duarte.
+ 
+ 
+ x86 assembly
+ 
+ http://www.cs.virginia.edu/~evans/cs216/guides/x86.html
+ 
+ 
+ 
+ http://www.osdever.net/bkerndev/Docs/intro.htm
+http://duartes.org/gustavo/blog/post/kernel-boot-process
+
+
+http://en.wikipedia.org/wiki/Linux_startup_process
+
+
+make -j4
+ls -l /lib/modules
+make modules_install -j4
+pacman -S bc
+pacman -S abs
+cp arch/x86/bzimage   /boot/vmlinux-linux-custom
+mkinitcpio   -k 3.12.0-rc5-custom -g /boot/initramfs-linux-custom.img
+grub-mkconfig  -o /boot/grub/grub.cfg
+
+
+
+
+http://tldp.org/LDP/tlk/dd/interrupts.html(interrupts)
+http://tldp.org/LDP/tlk/dd/pci.html(PCI)
+http://codingfreak.blogspot.in/2012/02/notification-chains-in-linux-kernel.html(coding freaks good blog)
+http://www.linuxjournal.com/node/7356/print(netlink sockets)
+http://ngn.ee.tsinghua.edu.cn/~lujx/linux_networking/index.html?page=0131777203_ch04lev1sec1.html(network stack explained in detail)
+http://www.dedoimedo.com/computers/crash-analyze.html(every thing for kernel crash)
+http://tldp.org/LDP/lkmpg/2.6/html/(best material for drivers)
+http://www.unix.com/programming/170998-simplest-network-driver.html(forum good one)
+http://lxr.linux.no/linux+v2.6.32/drivers/net/dummy.cIdummy network driver)
+geekstuff links {
+
+http://www.thegeekstuff.com/2010/11/50-linux-commands/
+http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/
+http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials
+/}
+
+http://www.linuxheadquarters.com/howto/tuning/kernelreasons.shtml(linux headquarters)
+http://linuxgazette.net/156/jangir.html(linux ethernet driver)
+http://linuxgazette.net/issue93/bhaskaran.html(network  driver code)
+http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/(make file writting)
+http://linux.die.net/lkmpg/x892.html(char device driver with ioctl)
+http://www.tldp.org/guides.html(Linux material)
+http://tldp.org/LDP/intro-linux/html(linux indetial)
+http://www.tuxradar.com/content/how-choose-best-linux-distro(choosing best linux distribution)
+http://www.freesoftwaremagazine.com/articles/drivers_linux
+http://www.kernel.org/
+www.freeelectrons.com 
+http://www.linuxforu.com/2010/12/getting-started-with-rtlinux/ (important link)
+http://www.linux-tutorial.info/modules.php?name=MContent&pageid=224 
+http://lwn.net/Articles/driver-porting/ 
+http://lxr.linux.no/linux (sourcecode tree);
+http://tldp.org/LDP/khg/HyperNews/get/devices/devices.html(good one)
+http://oldpapyrus.wordpress.com/2012/04/29/writing-linux-device-driver-tutorials/ (too good)
+http://www.cs.usfca.edu/~cruse/cs686s08/82573.c (network driver basic example)
+http://linux.about.com/library/cmd/blcmdl8_rmmod.htm (linux link)
+http://www.thegeekstuff.com 
+http://www.makelinux.net/books/lkd2/?u=ch11lev1sec4 (good reference for linux)
+
+
+
+
+
+
+C compilation and execution
+Input                  Program        Output
+ 
+source code          > Preprocessor > expanded source code
+expanded source code > Compiler     > assembly source code
+assembly code        > Assembler    > object code
+object code          > Linker       > executable code
+executable code      > Loader       > execution
+Here are examples of commonly used programs for different compilation and execution steps on a Linux system:
+"cpp hello.c -o hello.i" - Preprocessor preprocessing hello.c and saving output to hello.i.
+"cc1 hello.i -o hello.s" - Compiler compiling hello.i and saving output to      hello.s.
+"as hello.s -o hello.o" - Assembler assembling hello.s and saving output      to hello.o.
+"ld hello.o -o hello" - Linker linking hello.o and saving output to hello.
+"load hello" - Loader loading hello and running hello.
+-- 
+Narayan
+
+MIT device driver
+
+http://pdos.csail.mit.edu/6.828/2010/labs/lab6/
+http://pdos.csail.mit.edu/6.828/2011/labs/lab6/
+http://pdos.csail.mit.edu/6.828/2011/readings/i386/toc.htm
+
+CCNA	and CCNP .gns3
+
+http://openmaniak.com/
+http://www.gns3.net
+http://www.9tut.com/
+-- 
+
+
+
+Bit magic 
+
+
+http://graphics.stanford.edu/~seander/bithacks.html
+http://www.catonmat.net/blog/low-level-bit-hacks-you-absolutely-must-know/
+
+flame graphs
+
+http://dtrace.org/blogs/brendan/2012/03/17/linux-kernel-performance-flame-graphs/
+
+
+buffer overflow
+-- http://www.tenouk.com/Bufferoverflowc/Bufferoverflow1.html
+http://www.tenouk.com/ModuleW.html     (c compile,link,load ,execute)
+
+
+http://opensourceforgeeks.blogspot.in/
+
+wireshark->tcp threeway handshake example
+http://packetlife.net/blog
+http://packetlife.net/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/
+
+
+
+http://learnlinuxconcepts.blogspot.in/
+
+https://0xax.gitbooks.io/linux-insides/content/interrupts/interrupts-9.html
+
+
+interview
+
+
+http://www.impactinterview.com/2009/10/140-google-interview-questions/#software_engineer
+
+http://katemats.com/interview-questions/
+
+The syllabus for the interviews is very clear and simple:
+1) Dynamic Programming
+2) Super recursion (permutation, combination,...2^n, m^n, n!...etc. type of program. (NP hard, NP programs)
+3) Probability related programs
+4) Graphs: BFS/DFS are usually enough
+5) All basic data structures from Arrays/Lists to circular queues, BSTs, Hash tables, B-Trees, and Red-Black trees, and all basic algorithms like sorting, binary search, median,...
+6) Problem solving ability at a level similar to TopCoder Division 1, 250 points. If you can consistently solve these, then you are almost sure to get in with 2-weeks brush up.
+7) Review all old interview questions in Glassdoor to get a feel. If you can solve 95% of them at home (including coding them up quickly and testing them out in a debugger + editor setup), you are in good shape.
+8) Practice coding--write often and write a lot. If you can think of a solution, you should be able to code it easily...without much thought.
+9) Very good to have for design interview: distributed systems knowledge and practical experience.
+10) Good understanding of basic discrete math, computer architecture, basic math.
+11) Coursera courses and assignments give a lot of what you need to know.
+12) Note that all the above except the first 2 are useful in "real life" programming too!
+
+Interview 1:
+Graph related question and super recursion
+
+Interview 2:
+Design discussion involving a distributed system with writes/reads going on at different sites in parallel.
+
+Interview 3:
+Array and Tree related questions
+
+Interview 4:
+Designing a simple class to do something. Not hard, but not easy either. You need to know basic data structures very well to consider different designs and trade-offs.
+
+Interview 5:
+Dynamic programming,
+Computer architecture and low level perf. enhancement question which requires knowledge of Trees, binary search, etc.
+
+At the end, I wasn't tired and rather enjoyed the discussions. I think the key was long term preparation and time spent doing topcoder for several years (on and off as I enjoy solving the problems).
+
+Conclusion: "It's not the best who win the race; it's the best prepared who win it."Show Less
+
+Negotiation
+
+You can and should negotiate politely. You are in a stronger position if you have another offer, but even otherwise, you should ask for more of every type of payment!
+-- 
+Narayan
+
+
+
+
+system design
+ https://prismoskills.appspot.com/lessons/System_Design_and_Big_Data/Chapter_07_-_Designing_Google_Maps.jsp
+
+https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design
+
+https://stackoverflow.com/questions/22027599/resources-to-learn-solving-system-design-interview-problems
+
+http://highscalability.com/
+https://www.quora.com/How-do-I-prepare-to-answer-design-questions-in-a-technical-interview?redirected_qid=1500023
+
+https://www.palantir.com/2011/10/how-to-ace-a-systems-design-interview/
+
+-- 
+Narayan
+
+
+
+
+
+
+puzzles
+
+
+http://puzzles.nigelcoldwell.co.uk/
+https://sbjoshi.wordpress.com/2008/05/05/puzzle-12-balls-3-weighing/
+http://www.mytechinterviews.com/12-identical-balls-problem
+-- 
+Narayan
+
+
+
+crash tool
+
+http://www.slideshare.net/PaulVNovarese/linux-crash-dump-capture-and-analysis
+
+fuse example
+http://www.maastaar.net/fuse/linux/filesystem/c/2016/05/21/writing-a-simple-filesystem-using-fuse/
+
+
+virtual memory
+
+https://gabrieletolomei.wordpress.com/miscellanea/operating-systems/virtual-memory-paging-and-swapping/
+
+http://blog.scoutapp.com/articles/2015/04/10/understanding-page-faults-and-memory-swap-in-outs-when-should-you-worry
+
+https://gabrieletolomei.wordpress.com/miscellanea/operating-systems/in-memory-layout/
+
+
+
+container of
+
+http://radek.io/2012/11/10/magical-container_of-macro/
+
+tech post/kernel-boot-process
+http://vijayinterviewquestions.blogspot.in/2007/07/write-your-own-printf-function-in-c.html
+
+https://blogs.msdn.microsoft.com/abhinaba
+
+
+
+
+http://massivetechinterview.blogspot.in
+
+https://www.educative.io/collection/5668639101419520/5649050225344512
+
+interviewbit
+
+tushor roy
+geeksforgeeks
+cracking the coding inteview
+
+https://github.com/checkcheckzz/system-design-interview
+https://github.com/shashank88/system_design
+gianlo.com 
+
+
+
+garbage collector
+
+http://journal.stuffwithstuff.com/2013/12/08/babys-first-garbage-collector/
+
+http://www.geeksforgeeks.org/mark-and-sweep-garbage-collection-algorithm/
+
+
+http://blog.gainlo.co/index.php/2016/07/25/design-a-garbage-collection-system-part-i/	
+
+
+
+dinning philosophers and smokers
+https://www.cs.indiana.edu/classes/p415-sjoh/hw/project/dining-philosophers/index.htm
+
+http://www.cs.umd.edu/~hollings/cs412/s96/synch/smokers.html
+
+
+Distributed systems
+
+http://webdam.inria.fr/Jorge/html/wdmch15.html
+
+https://www.microsoft.com/en-us/research/people/lamport/#
+
+http://book.mixu.net/distsys/ebook.html
+https://www.quora.com/What-are-some-good-books-on-Distributed-Systems-for-newbie
+
+https://www.quora.com/What-is-the-best-book-to-learn-distributed-systems-in-a-practical-way-for-a-software-engineer
+
+https://github.com/theanalyst/awesome-distributed-systems
+
+https://www.quora.com/What-is-the-best-way-to-get-a-job-developing-distributed-systems 
+
+https://www.quora.com/What-is-a-career-in-distributed-systems-like
+
+https://www.quora.com/What-are-my-job-prospects-if-I-desire-a-career-in-Systems-Operating-Systems-Distributed-Systems-Parallel-Computing
+
+https://blog.separateconcerns.com/2015-07-07-four-easy-reads-distsys.html
+
+https://www.quora.com/Which-is-a-good-online-course-for-studying-distributed-systems-Video-lectures-preferred
+
+https://www.quora.com/What-are-the-best-ways-to-start-learning-about-distributed-systems-from-a-beginners-point-of-view
+
+https://www.quora.com/What-are-some-good-resources-for-learning-about-distributed-computing-Why
+
+
+
+======
+design
+https://lethain.com/introduction-to-architecting-systems-for-scale/
+https://www.hiredintech.com/system-design/
+
+
+c posts
+
+https://www.hackerearth.com/practice/notes/memory-layout-of-c-program/
+http://radek.io/2011/09/01/static-and-extern-keywords-in-c/
+
+https://en.wikibooks.org/wiki/X86_Disassembly/Functions_and_Stack_Frames
+https://www.bottomupcs.com/elements_of_a_process.xhtml
+-- 
+Narayan
+
+
+inode and strply
+
+
+http://www.tldp.org/LDP/lki/lki-3.html
+
+https://lwn.net/Articles/507319/
+
+
+kernel hackers
+
+https://jvns.ca/
+http://web.mit.edu/jesstess/www/
+
+
+
+
+graphs applications
+http://www.ijest.info/docs/IJEST10-02-09-124.pdf
+http://discuss.codechef.com/questions/7436/list-of-problems-to-practice-on-graph
+http://www.cse.iitk.ac.in/users/aca/lop/slides/GraphTheory-I.pdf
+http://www.iust.ac.ir/files/cefsse/pg.cef/Contents/smgmm.ch1.pdf (graph theory basics)
+
+http://www.openproblemgarden.org/
+
+code
+http://www.cs.yale.edu/homes/aspnes/pinewiki/C%282f%29Graphs.html
+http://www.sanfoundry.com/c-programming-examples-graph-problems-algorithms/
+
+
+ds and algorithm/
+
+
+https://www.quora.com/How-do-I-start-learning-or-strengthen-my-knowledge-of-data-structures-and-algorithms?redirected_qid=1202701
+
+
+http://acm.timus.ru/problemset.aspx?space=1&page=1
+-- 
+Narayan
+
+
+
+https://en.wikipedia.org/wiki/Ticket_lock
+http://sklinuxblog.blogspot.in/2015/04/linux-spinlock-implementation-on-x8664.html
+http://www.linuxinternals.org/blog/2014/05/07/spinlock-implementation-in-linux-kernel/
+https://saiparancs.wordpress.com/2012/10/21/arm-vs-intel/
+
+
+http://linuxkernel51.blogspot.in/2011/02/how-containerof-macro-works-example.html
+
+
+-- 
+Narayan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

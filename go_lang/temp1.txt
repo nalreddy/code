@@ -1,0 +1,327 @@
+reak 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 {
+	   break 
+	}
+	fout.Write(b)
+}b := make([]byte,1)
+
+for {
+    n,_ := fin.Read(b

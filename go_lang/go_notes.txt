@@ -1,0 +1,578 @@
+
+Ramesh raju
+go
+
+9/19/2017
+between c and python
+concurrency
+array, 
+slice ,append
+strings
+maps
+
+a := 5
+b := [3] int {1,2,3}
+c := [3][3] int {{1,2,3},{4,5,6},{7,8,9}}
+d := [] int {1,2,3}
+e := [][] int {}
+f := map [string] string {}
+g:= []map[string] int {}
+h := map[string] [] string {}
+i := map[string] map[string] int {}
+j := map[string]map [string] [] string {}
+
+control structures
+
+if,switch,for break, continue
+
+WAP to test given number is prime or not  x
+WAP to get next prime x
+WAP to capture position of even lenght words of given string  x
+WAP to swap the first and last characters of each word in given string   x
+WAP to read two strings of same lenght from keyboard,  same or not same at following locations x
+WAP to swap first element with last element , second with last  from given array of n elements   x
+to read and display matrix 2D x  x
+find sum of two matrixs  x
+find sum of n matrixs   x
+to read square matrix of order n  ,interface to swap rows, swap cols , swap which row , cols, unitl 3 exit
+sequence of hundres strings, search for specific word, lines and line number ( map)
+
+reading matrix 
+
+m := [][] int {}
+for i:= 0; i< r;i++ {
+    temp = [] int {}
+	for j:= 0; j < c; j++ {
+	    scan (&x)
+		temp = append(temp, x)
+	}
+     m = append(M, temp)
+
+
+
+	 
+20/9/2017
+
+int x = 10;  
+int* p = &x;
+
+x  ?  
+*p ?
+
+
+pointers
+
+var p *int 
+p = &n
+
+*p deference 
+
+
+functions
+
+func name(inputs) returntype {
+
+  return
+}
+
+variable arguments
+
+func addn(args ...int) {
+   s := 0
+   for _,x := rang args {
+       s = s + x
+   }
+   return s
+}
+
+func f(a []int) {
+   
+}
+
+func main () {
+  x := [] int {10,20}
+  f(x)
+}
+
+==============
+
+
+closures : way to return local variables of function to another function
+
+
+func outer() func int {
+
+     state := 10
+	 inner := func int {
+	     return state
+	 }
+	 return inner
+}
+
+func main() {
+    inn := outer()
+	x := inn()
+}
+==================
+
+generators
+
+func seq () func int {
+  i := 0
+  gen := func() int {
+     i = i + 1
+	 return i
+  }
+  return gen
+}
+
+
+func main() {
+     iseq := seq()
+	 
+}
+==========
+
+int, int8, int16,int32
+float, float8 etc
+
+structs and method
+
+type rectangle struct {
+    lenght float32
+	breadth float32
+}
+
+func main() {
+  r := rectangle{2,3}
+  a := r.area()
+}
+
+method
+
+
+func(r *rectangle) area() float32 {
+ 
+    return r.length * r.breadth
+}
+
+func( r *rectangle) scale(x,y float32) {
+  // check len ,breath invalid
+     r.length += x
+	 r.breadth += y
+}
+
+type triangle struct {
+    base float32
+	height float32
+}
+
+ 
+func (t *triangle) area() float32 {
+  
+   return 0.5 * t.base * t.height
+ }
+
+no function overloading ??
+
+
+
+
+interface
+
+
+type shape interface {
+
+       area() float32
+}
+
+func getArea(shape Shape) float32 {
+
+    return Shape.area()
+}
+
+func main() {
+  r := reactangle{2,3}
+ t := triangle {3,4}
+ 
+ a := getArea(r)
+ b := getArea(t)
+}
+
+
+unc adder(a,b int) int {
+
+  return a+b
+}
+
+====================
+func add10(f funct(int,int) int ) func(int, int ) int {
+
+       decor := func(a,b int) int {
+	          return f(a,b) + 10
+	   }
+
+	   return decor
+}
+
+
+func main() {
+   s:= add10(adder(2,3))
+}
+
+
+
+============================
+
+file management
+
+
+fin,err = os.Open("temp.txt")
+
+if err != nil {
+    panic(err)
+}
+
+defer fin.Close()
+
+
+fout,err = os.Create("temp1.txt")
+
+if err != nil {
+    panic(err)
+}
+
+defer out.Close()
+
+
+b := make([]byte,1)  ->similar var b byte = ' '
+
+for {
+    n,_ := fin.Read(b) 
+    if n == 0 { break }
+	fout.Write(b)
+}
+
+}
+
+
+p,_ := fin.Seek(3,0)
+ returns current position
+ moves to 3 bytes from current position
+ p,_ := fin.Seek(5,1)
+ 
+ relative position   0-> starting 
+                      1->current position
+					  2->end of file
+					  
+p,_ := fin.Seek(-3,1)
+data,_ := fin.Read(buf)
+
+
+P,_ := fin.Seek(0,2)
+
+P,_
+
+==========
+command line arguments
+
+
+import "strconv"
+
+os.Args 
+"sum_cli.go" | "2" | "3"
+
+x,_ := strconv.Atoi(os.Args[1])
+
+
+========================
+WAP to copy content of first n-1 files into nth file with cli interface   go run f1 f2 f2 f3 f3 f4     x
+                                    
+WAP to split given file into n parts with cli  go run splitfile.go 4  x
+           temp1.txt, temp2.txt  ... etc
+		   
+WAP to compare two files if not same  display lines at which they are mismatching  x
+
+WAP go run f1 f2 f3 f4 f5  ,  program should ask enter word to search 
+out put
+   which files and which lines   till until quit  ? complete
+   
+   
+   ===============================================
+   
+ 21/9/2017
+   
+  concurrency
+ 
+ 
+ fork vs thread ?? which one to choose
+
+parallelism within process is threads
+
+parallelism at application level by process
+
+see exmaple
+==================================== 
+channels and select
+
+$go run randpninegame.go 100  // integer
+
+
+three flows 
+each routine generate n random primes
+keep track which one finishes first
+
+
+play table tennis
+
+   two players  two go routine
+   ball
+   table
+   type ball struct { 
+       hits int
+   }
+   
+   
+ generate n rectangles randomly 
+ 
+ go routine to classyfiy square or rectangle
+ 
+ 
+ channel directions 
+ 
+ func square (c1 <-chan int, c2 chan<- int)
+{
+    n := c1
+	c2 <- n * n
+
+}
+
+func main() {
+  c1 := make(chan int)
+  c2 := make(chan int)
+  go sqaure(c1,c2)
+  c1<-10
+  fmt.Println("result",<-c2)
+}
+ 
+   ====================================
+   
+   regular expressions
+   
+   
+   to search and extract , replace data
+   
+   quantifier(Q)  on previous character
+   
+   list of meta characters
+   .  dot ->  any one characters
+  Q ? -> zero or one      
+  Q + -> one or more      Q
+   
+  Q * zero or more         Q
+   ^ at the begining of the string
+   $ at the end of the string
+   [abc] any one of abc characters
+   (abc)   group of all the characters
+  Q {m}  m times   Q
+  Q {m,n}  at least m times and n at most m times  Q
+    | pipe symbol or
+
+    \   escape sequence character
+	\s   space
+	\d   digit (character form)
+    \w    word character [a-zA-Z0-9_]
+    \b     word boundry
+   ======
+   
+   \d a single digit number [0-9]
+   
+   \d\d  double digit number 00 to 99
+   \d\d\d   000 to  999
+   \d {3} same as above
+   \d {3,5}  min 3 digit number and max of 5 digit number
+   
+   hell?o -> helo, hello
+   hell+o -> hello, helllo,hellllo, .................
+   
+   hell*o-> helo, hello,helllo
+   
+   he(ll)+o   hello, hellllo, 
+   
+   s:= "hello hi how are you hello fine hello"
+   
+   ^hello$ returns false  why ????? searchs hello at begining ,after that it looks for end of strings which is not true
+   
+   ^hello .* hello$  say true that hello at begining and hello at end of sentence
+   
+   
+   \d+\s\w+  number space word
+   \d+\s+\w+
+   \d+\s+\w{5,10}  min 5 char , max 10 word
+   \d+\s[a-z]+   
+   [4359]+     434459....
+
+   
+   [bB]anga?lore?
+   \d{3}[13579]  four digit odd number
+   [78]\d{3,5}[456]
+   
+   \d+ a number 
+   [0123456789]+ same a number
+   [0-9]+ same a number
+   
+   [^6789]+  complement any number other than 6789
+   ^[6789]  at  begining 
+   
+   ^[^6789]  
+   
+   s:= ""hi hello @1234 ok $5678 done"
+   
+     search for dollor value
+	 
+	 \$\d+   add escape to avoid $ interpretition
+	 
+	 
+	 search 
+	 
+	  s := "hi hello 1234 ok 56789 done"
+	  
+	  import "regexp"
+	  
+	  fmt.Println("enter soem pattern of string")
+	  
+	  var pat string
+	  fmt.Scan(&pat)
+	  
+	  cpat,_ := regexp.Compile(pat)
+	  result := cpat.MatchString(s)   true or false match string in pat
+	  
+	  if result == true {
+	  
+	    fmt.Println("found")
+	  } else {
+	     fmt.Println("not found")
+	  }
+	 
+	 
+	 extract
+	 
+	 
+   s := "hi hello 1234 ok 56789 done"
+	  
+	  import "regexp"
+	  
+	  fmt.Println("enter soem pattern of string")
+	  
+	  var pat string
+	  fmt.Scan(&pat)
+	  
+	  cpat,_ := regexp.Compile(pat)
+	  
+	  result := cpat.FindAllString(s, -1)
+	  
+	  n := len(result)
+	  fmt.Println(result)
+	  
+	  ["1234", "56789"]
+	
+
+replace string
+	
+	  
+	   s := "hi hello 1234 ok 56789 done"
+	  
+	  import "regexp"
+	  
+	  fmt.Println("enter soem pattern of string")
+	  
+	  var pat string
+	  fmt.Scan(&pat)
+	  
+	  cpat,_ := regexp.Compile(pat)
+	  
+	  s1 := cpat.ReplcaAllString(s,"ABC")
+	  fmt.Println(s1)
+	  
+}
+
+
+
+WAP to find sum of the all numbers in given string  X
+
+to Extract all words which begins with Upp case alphabet from given string x
+
+Extract all words which begins with Upp case and ends with lower case owel [aeiou] fro given string x
+
+extract all words which at least one owel  ,from string    x
+
+extract  all capital letter words from given string  x
+
+extract both posive and negative numbers in given string, withou sing too +value x
+extract all numbers between one and 255  inclusive   , exclude 32559   don't get it
+extract all valid ip address in given string
+
+
+======================================
+
+
+22/9/2017
+
+inheretence  
+
+is a  relation ship  , employee is person
+
+
+type person struct {
+   fname string
+   lname string
+   email string
+
+}
+
+
+type employee struct {
+   person
+   eid int32
+   salary float32
+
+}
+	  
+   
+has a relation ship containtership
+
+type employee struct {
+   Person person
+   eid int32
+   salary float32
+
+}
+=====================================
+
+
+multi error returning 
+
+panic recover
+
+mutex
+
+socket programming /server client
+
+   > thread pool  how to wait infinitely
+   
+   
+ 
+=========================
+
+
+
+
+   
+	
+   
+
+
+		   
+
+
+

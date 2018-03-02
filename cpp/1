@@ -1,0 +1,14 @@
+#include<iostream>
+
+using namespace std;
+
+void f() 
+{
+    cout <<"called template"<<endl;
+    
+}
+
+void main()
+{
+    f();
+}
