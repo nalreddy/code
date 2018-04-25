@@ -8,7 +8,7 @@ struct stack
  int *array;
 };
 
-int 
+int
 create_stack(struct stack **st, int capacity)
 {
     //int ret = 0;
@@ -21,10 +21,10 @@ create_stack(struct stack **st, int capacity)
    return 0;
 }
 
-int 
+int
 isEmpty(struct stack *st)
 {
-  return st->top == -1;   
+  return st->top == -1;
 }
 
 int
@@ -41,7 +41,7 @@ int push(struct stack *st, int x)
     }
     st->top +=1;
     st->array[st->top] = x;
- return 0; 
+ return 0;
 }
 
 int pop(struct stack *st)
@@ -50,7 +50,7 @@ int pop(struct stack *st)
    if(isEmpty(st)) {
       printf("stack empty\n");
       return -1;
-   }   
+   }
   temp = st->array[st->top];
   st->top -=1;
   return temp;
@@ -79,7 +79,7 @@ int main()
     printf("peek = top = %d  %d\n",st->top, peek(st));
     free(st->array);
     free(st);
-   
+
     printf("peek = top = %d  %d\n",st->top, peek(st));
     if(!st)
 	printf("memory freed\n");
