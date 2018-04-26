@@ -2,40 +2,45 @@
 
 using namespace std;
 
-
+typedef struct node 
+{
+    int data;
+    struct node *next;
+} node;
+   
 
 class list 
 {
     public:
+
         list() { head = NULL; }
-        node* get_node(int x);
+        void add_node(int x);
+        void delete_list()
+        void printlist();
+
     private :
-         
-        typedef struct node 
-        {
-            int data;
-            struct node *next;
-        } node;
-           
         node* head;
+        node* getnode(int x);
 };
+ 
 
-
-node* list::getnode(int x)
+void list :: printlist()
 {
-    node* temp = new node;
-    
-    temp->next = NULL;
-    temp->data = x;
-
-    return temp;
+    node *cur = head;
+    if(!cur) {
+        cout << "empty list " << endl;
+        return;
+    }
+    while(cur) {
+        cout << cur->data << " ";
+        cur = cur->next;
+    } 
+    cout << endl;
 }
 
-#if 0
-int get_count(struct link *head)
+int get_count()
 {
-   int c = 0;
-   struct link *cur = head;
+   node* cur = head;
 
    while(cur) 
    {
@@ -45,6 +50,53 @@ int get_count(struct link *head)
    return c;
 }
 
+node* list :: getnode(int x)
+{
+    node* temp = new node;
+
+    if( !temp ) return NULL;
+
+    temp->next = NULL;
+    temp->data = x;
+
+    return temp;
+}
+
+//error handling , out of memory
+void list :: add_node(int x)
+{
+    node* temp = NULL;
+    int error = 0;
+
+    if (head == NULL) {
+        head = getnode(x);
+        return;
+    }
+
+    temp = getnode(x);
+    temp->next = head;
+    head = temp;
+
+    return;
+}
+
+void list :: delete_list()
+{
+    node* cur = head, temp = NULL;
+    if(!head) {
+        cout << "List empty , nothing to delete " << endl;
+	return;
+    }
+
+    while(cur) {
+      temp = cur;
+      cur = cur->next;
+      free(temp);
+    }
+    head = NULL;
+}
+
+#if 0
 struct link ** 
 insert_atfront(struct link **head, int data)
 {
@@ -61,28 +113,6 @@ insert_atfront(struct link **head, int data)
   return head;
 }
 
-void printlist(struct link *head)
-{
-    if(!head)
-	return;
-   while(head) {
-      printf("%d ",head->data);
-      head = head->next;
-   } 
-   printf("\n");
-}
-
-void deletelink(struct link **head){
-    struct link *temp = NULL;
-    if(!*head)
-	return;
-    temp = *head;
-    while(*head) {
-      temp = *head;
-      free(temp);
-      *head = (*head)->next;
-    }
-}
 
 void reverse(struct link **head)
 {
@@ -216,5 +246,13 @@ void flat(struct link *head) {
 int main(){
     list l;
 
+    l.printlist();
+    l.add_node(11);
+    l.add_node(12);
+    l.add_node(13);
+    l.add_node(14);
+    l.printlist();
+
+    l.delete_list();
     return 0;
 }

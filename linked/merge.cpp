@@ -1,37 +1,23 @@
-#include<iostream>
-
-using namespace std;
-
+#include<stdio.h>
+#include<stdlib.h>
 
 
-class list 
+struct link
 {
-    public:
-        list() { head = NULL; }
-        node* get_node(int x);
-    private :
-         
-        typedef struct node 
-        {
-            int data;
-            struct node *next;
-        } node;
-           
-        node* head;
+ struct link *next;
+ int data;
 };
 
-
-node* list::getnode(int x)
+struct link * getnode(int x)
 {
-    node* temp = new node;
-    
-    temp->next = NULL;
-    temp->data = x;
+ struct link *temp = 
+     (struct link *) malloc(sizeof(struct link));
 
-    return temp;
+ temp->next = NULL;
+ temp->data = x;
+ return temp;
 }
 
-#if 0
 int get_count(struct link *head)
 {
    int c = 0;
@@ -167,9 +153,9 @@ void movenode(struct link **src, struct link **dst)
 {
     struct link *next = *src;
    
-    *src = *src->next;
-    *dst->next = next;
-    *dst = *dst->next;      
+    *src = (*src)->next;
+    (*dst)->next = next;
+    *dst = (*dst)->next;      
 }
 
 struct next * merge(struct link *a, struct link *b)
@@ -181,17 +167,20 @@ struct next * merge(struct link *a, struct link *b)
 
     while(a || b)
     {
-	if(!a)
+	if(!a) {
 	    tail->next = a;
-	if(!b)
+            break;
+        }
+	if(!b) {
 	    tail->next = b;
+            break;
+        }
 	if(a->data < b->data) {
-           movenode(&a,&tail->next) 
-
-	 }else if(a->data > b->data) {
-           movenode(&b,&tail->next) 
+           movenode(&a,&tail->next); 
+	 } else if(a->data > b->data) {
+           movenode(&b,&tail->next);
 	 } else {
-           movenode(&a,&tail->next) 
+           movenode(&a,&tail->next);
            cur = b;
 	   b = b->next;
 	   free(cur);
@@ -211,10 +200,33 @@ void flat(struct link *head) {
 //remove_loop
 //find_intersection
 
-#endif
-
 int main(){
-    list l;
+#if 0    
+   struct link *head = NULL;
+   head = getnode(10);
+    head->next = getnode(11);
+    head->next->next = getnode(12);
+    head->next->next->next = getnode(13);
+    head->next->next->next->next = getnode(14);
+#endif    
+    struct link *head1 = NULL;
+    struct link *head2 = NULL;
+ 
+    head1 = getnode(10);
+    head1->next = getnode(11);
+    head1->next->next = getnode(12);
+    head1->next->next->next = getnode(13);
+    head1->next->next->next->next = getnode(14);
+    head1->next->next->next->next->next = getnode(16);
+    head2 = getnode(1);
+    head2->next = getnode(2);
+    head2->next->next = getnode(3);
+    head2->next->next->next = getnode(4);
+    head2->next->next->next->next = head1->next->next->next;
 
+    printlist(head1);
+    printlist(head2);
+    struct link *temp = merge(head1,head2);
+    printlist(temp);
     return 0;
 }

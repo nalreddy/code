@@ -13,8 +13,7 @@ int main()
     l.push_back(10);
     l.push_back(11);
 
-    while(l.end != it) 
-    {
+    while(l.end != it) {
         cout << *it++;
     }
 
