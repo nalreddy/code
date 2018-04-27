@@ -21,6 +21,7 @@ class stack
 	unsigned int stack_size;
 	struct node *top;
 	struct node* get_node(int data);
+	bool is_empty();
 };
 
 struct node* stack :: get_node(int data)
@@ -59,7 +60,7 @@ void stack :: pop()
 {
     struct node* temp = top;
 
-    if (!top) {
+    if (is_empty()) {
 	cout << "oops nothing to pop" << endl;
 	return;
     }
@@ -77,11 +78,16 @@ unsigned int stack :: size()
     return stack_size;
 }
 
+bool stack :: is_empty()
+{
+    return top == NULL;
+}
+
 void stack :: print()
 {
     struct node* cur = top;
 
-    if(!top) {
+    if(is_empty()) {
 	cout << "nothing to print" << endl;
 	return;
     }
@@ -91,6 +97,55 @@ void stack :: print()
 	cur = cur->next;
     }
 }
+
+void stack :: reverse()
+{
+    struct node* temp = top;
+
+    if (is_empty()) return;
+
+    temp = __reverse(temp);
+    temp->next = NULL;
+}
+
+#if 0
+struct node*  stack :: __reverse(struct node *temp)
+{
+    struct node* cur = NULL;
+
+    if (temp->next == NULL) { top = temp; return temp; }
+
+     cur = __reverse(temp->next);
+
+     cur->next = temp;
+     return temp;
+}
+
+void stack :: sort()
+{
+    struct node* temp = top;
+
+    top = __sort(temp);
+}
+
+struct node* stack :: __sort(struct node* temp)
+{
+    struct node* cur = temp;
+
+    if (cur == NULL) {
+	return NULL;
+    }
+    __sort(temp->next);
+
+    insert(cur,temp);
+}
+void stack :: insert(struct node* cur, struct node* temp)
+{
+    if (temp == cur || cur->data < temp->data) {
+	cur-
+    }
+}
+#endif
 
 int main()
 {
@@ -103,7 +158,7 @@ int main()
     st.push(13);
     st.print();
     cout << "size = " << st.size() << endl;
-
+#if 0
     st.pop();
     cout << "size = " << st.size() << endl;
     st.print();
@@ -112,5 +167,9 @@ int main()
     st.pop();
     cout << "size = " << st.size() << endl;
     st.print();
+#endif
+    st.reverse();
+    st.print();
+    cout << "size = " << st.size() << endl;
     return 0;
 }
