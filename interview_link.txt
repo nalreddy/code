@@ -1,0 +1,56 @@
+process address space
+endianness 
+sizeof ,offset, container
+
+struct padding
+
+memmove
+
+diff strcpy ,memcpy
+
+process address space
+
+spin lock implementation
+semaphore implementation
+
+diff spin vs mutex vs semaphore
+
+priority inversion
+live lock vs dead lock
+
+why can't sleep in interrupt
+
+sleeping barber problem
+
+volatile keyword
+https://barrgroup.com/Embedded-Systems/How-To/C-Volatile-Keyword
+
+dinning philosopher 
+https://www.cs.indiana.edu/classes/p415-sjoh/hw/project/dining-philosophers/index.htm
+
+RLU cache
+
+memory buddy system
+
+vmllaoc vs kamalloc
+
+ip address validation
+
+hashtable imple
+https://medium.com/@aozturk/simple-hash-map-hash-table-implementation-in-c-931965904250
+LRU cache
+ip address validate and convert to hex
+semaphore
+
+median of diff array
+Boogle--> find word in matrix
+hash imple
+//in code
+thread pool
+ //in code
+object pool
+https://gist.github.com/pazdera/1124832
+
+snakes and ladders
+tic tac
+

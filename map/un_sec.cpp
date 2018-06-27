@@ -8,9 +8,9 @@ int main()
     std::unordered_map<std::string, int> wordMap;
 
     // Insert Few elements in map
-    wordMap.insert( { "First", 1 });
-    wordMap.insert(     { "Second", 2 });
-    wordMap.insert(     { "Third", 3 });
+    wordMap.insert({ "First", 1 });
+    wordMap.insert({ "Second", 2 });
+    wordMap.insert({ "Third", 3 });
 
     // Overwrite value of an element
     wordMap["Third"] = 8;

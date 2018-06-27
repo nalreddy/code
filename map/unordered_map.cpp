@@ -15,7 +15,7 @@ int main()
     
     unordered_map<int, int> :: iterator it;
 
-    for ( it = ump.begin(); it != ump.end(); ++it) {
+    for (it = ump.begin(); it != ump.end(); ++it) {
         cout << (*it).first << " " << (*it).second << endl;
     }
     return 0;

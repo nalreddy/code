@@ -22,9 +22,7 @@ struct node* get_node (int key)
 
 int main() 
 {
-    
     map<int, Node *> mp;
-
 
     mp[1] = get_node(1);
     mp[2] = get_node(2);
@@ -36,7 +34,7 @@ int main()
 //    mp.insert(make_pair(1, 111));
     map<int, struct node *> :: iterator it;
 
-    for ( it = mp.begin() ; it != mp.end(); it++){
+    for (it = mp.begin() ; it != mp.end(); it++){
          cout << (*it).first << " " <<(*it).second->data << endl;
     }
 
