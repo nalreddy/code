@@ -28,7 +28,7 @@ https://barrgroup.com/Embedded-Systems/How-To/C-Volatile-Keyword
 dinning philosopher 
 https://www.cs.indiana.edu/classes/p415-sjoh/hw/project/dining-philosophers/index.htm
 
-RLU cache
+LRcache
 
 memory buddy system
 
@@ -39,6 +39,8 @@ ip address validation
 hashtable imple
 https://medium.com/@aozturk/simple-hash-map-hash-table-implementation-in-c-931965904250
 LRU cache
+http://bhrigu.me/blog/2017/01/22/lru-cache-c-plus-plus-implementation/
+
 ip address validate and convert to hex
 semaphore
 
