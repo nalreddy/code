@@ -18,13 +18,17 @@ class List
         T pop_Front();
         T pop_Back();
         void print();
-        size_t getLen();
+        size_t getLen() const;
         void reverse();
         bool search(const T x);
         bool detectCycle();
         void makeCycle();
         void removeCycle();
         void addListLsb(const List<T> &l1, const List<T> &l2);
+        void addListMsb(const List<T> &l1, const List<T> &l2);
+        void operator=(const List<T> &l1);
+        int addSameSize(struct Node<T>*, struct Node<T>*);
+        void addCarry(struct Node<T>*, struct Node<T>*, int &carry);
      private :
         void unlinkCycle(struct Node<T>* slow, struct Node<T>* head);
         struct Node<T>* mHead;
@@ -67,7 +71,7 @@ bool List<T> :: isEmpty() const
 }
 
 template<typename T>
-size_t List<T> :: getLen()
+size_t List<T> :: getLen() const
 {
     return mLength;
 }
@@ -121,6 +125,8 @@ bool List<T> :: push_Back(const T x)
         mHead = new Node<T>(x);
         if (mHead == nullptr)
             return false;
+        mLength++;
+        return true;
     }
   
     while (cur->mNext)
@@ -336,7 +342,22 @@ void List<T> :: unlinkCycle(struct Node<T>* loop_node, struct Node<T>* head)
     ptr2->mNext = nullptr;
 }
 
-//supports only numbers , integers only
+template<typename T>
+void List<T> :: operator=(const List<T> &l1)
+{
+    //don't want to overwrite
+    if (!isEmpty())
+        return;
+
+    struct Node<T>* cur = l1.mHead;
+
+    while (cur != nullptr)
+    {
+        push_Back(cur->mData);
+        cur = cur->mNext;
+    }
+}
+
 template<typename T>
 void List<T> :: addListLsb(const List<T> &l1, const List<T> &l2)
 {
@@ -354,11 +375,93 @@ void List<T> :: addListLsb(const List<T> &l1, const List<T> &l2)
         } else {
             push_Back(val % 10);
         }
+        mLength++;
+
         cur1 = cur1 ? cur1->mNext : nullptr;
         cur2 = cur2 ? cur2->mNext : nullptr;
     }
 
     if (carry) {
         push_Back(carry);
+    }
+}
+
+template<typename T>
+int List<T> :: addSameSize(struct Node<T>* cur1, struct Node<T>* cur2)
+{
+    if (cur1 == nullptr)
+        return 0;
+
+    int carry = addSameSize(cur1->mNext, cur2->mNext);
+
+    int val = 0;
+    val = cur1->mData + cur2->mData + carry;
+    carry = val/10;
+
+    if (isEmpty()) {
+        mHead = new Node<T>(val % 10);
+        mLength++;
+    } else {
+        push_Front(val % 10);
+    }
+    return carry;
+}
+
+template<typename T>
+void List<T> :: addCarry(struct Node<T>* cur1, struct Node<T>* cur2, int &carry)
+{
+    if (cur1 == cur2) return;
+
+    addCarry(cur1->mNext, cur2, carry);
+
+    int val = cur1->mData + carry;
+    push_Front(val % 10);
+    carry = val/10;
+}
+
+template<typename T>
+void List<T> :: addListMsb(const List<T> &l1, const List<T> &l2)
+{
+    if (l1.isEmpty() && l2.isEmpty())
+        return;
+
+    if (l1.isEmpty()) {
+        mHead = l2.mHead;
+        mLength++;
+        return;
+    }
+
+    if (l2.isEmpty()) {
+        mHead = l1.mHead;
+        mLength++;
+        return;
+    }
+
+    size_t len1 = l1.getLen();
+    size_t len2 = l2.getLen();
+
+    struct Node<T>* cur1 = l1.mHead;
+    struct Node<T>* cur2 = l2.mHead;
+    int carry = 0;
+    //same size
+    if (len1 == len2) {
+        carry = addSameSize(cur1, cur2);
+    } else {
+        int diff = abs(len1 - len2);
+
+        if (len1 < len2) {
+            cur1 = l2.mHead;
+            cur2 = l1.mHead;
+        }
+        struct Node<T>* temp = cur1;
+        for (; diff != 0; diff--) {
+            temp = temp->mNext;
+        }
+        carry = addSameSize(temp, cur2);
+        addCarry(cur1, temp, carry); 
+    }
+
+    if (carry) {
+        push_Front(carry);
     }
 }
