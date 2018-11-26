@@ -2,7 +2,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-
 pthread_mutex_t count_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t condition_var = PTHREAD_COND_INITIALIZER;
 
@@ -44,8 +43,8 @@ int main()
 {
     pthread_t thread1, thread2;
 
-    pthread_create(&thread1, NULL, &odd, NULL);
     pthread_create(&thread1, NULL, &even, NULL);
+    pthread_create(&thread1, NULL, &odd, NULL);
 
     pthread_join(thread1, NULL);
     pthread_join(thread2, NULL);
