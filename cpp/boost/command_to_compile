@@ -1,0 +1,16 @@
+g++ test.cpp -DBOOST_TEST_DYN_LINK -lboost_unit_test_framework
+or 
+g++ test.cpp -lboost_unit_test_framework
+
+
+
+// link to
+//https://www.boost.org/doc/libs/1_49_0/libs/test/doc/html/utf/user-guide/runtime-config/run-by-name.html
+// command line to print boost_test_message
+./a.out --log_level=message
+
+how to run specific test case
+./example --log_level=test_suite --run_test=testA,testB
+
+//wild cards
+example --log_level=test_suite --run_test=*/test1
