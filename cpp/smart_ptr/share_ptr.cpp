@@ -3,6 +3,7 @@
 
 using namespace std;
 
+#if 0
 class A 
 {
     public:
@@ -29,11 +30,52 @@ void print()
 #endif
 
 }
+#endif
+
+
+class Foo
+{
+    public:
+        void doSomething()
+        {
+            cout << " Foo " << __func__ << endl;
+        }
+        ~Foo()
+        {
+            cout << " Foo dtor called \n";
+        }
+};
+
+class Bar
+{
+    private:
+        std::shared_ptr<Foo> pFoo;
+    public:
+        Bar()
+        {
+            pFoo = std::shared_ptr<Foo>(new Foo());
+        }
+
+        ~Bar()
+        {
+            cout << " Bar dtor calledd \n";
+        }
+
+        std::shared_ptr<Foo> getFoo()
+        {
+            return pFoo;
+        }
+};
 
 int main()
 {
-    print();
+    std::shared_ptr<Foo> fooptr; 
+    {
+        Bar br;
+        fooptr = br.getFoo();
 
+    }
+    fooptr->doSomething();
     return 1;
 }
 
