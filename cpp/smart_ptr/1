@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+
+template<class T>
+class SmartPtr
+{
+    public:
+        SmartPtr(T* ptr = nullptr ) : mPtr(ptr) 
+        { 
+            cout << "Smart ctor called \n";
+        }
+
+        ~SmartPtr()
+        {
+            cout << "Smart dtor called \n";
+            delete mPtr;
+        }
+
+        SmartPtr(SmartPtr& sPtr)
+        {
+            mPtr = sPtr.mPtr;
+            sPtr.mptr = nullptr;
+            cout << "copy ctor called \n";
+        }
+
+        SmartPtr& operator = (SmartPtr& sPtr)
+        {
+            //seft assignment
+            if (&sPtr == this) return *this;
+
+            mPtr = sPtr.mPtr;
+            sPtr.mPtr = nullptr;
+            cout << " assigment ctor called \n";
+        }
+
+        T& operator *() { return *mPtr; }
+        T* operator ->() { return mPtr; }
+
+    private:
+        T* mPtr;
+};
+
+int main()
+{
+    SmartPtr<int> p1(new int(1));
+    SmartPtr<int> p2;
+
+    p2 = p1;
+
+    return 0;
+}
+
