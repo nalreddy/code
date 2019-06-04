@@ -1,3 +1,17 @@
+
+exception , traps ,syscall entry 
+virtual address advs vs disadvs
+
+advs :
+    protection ?
+    program > ram
+    independent position or space locality
+    page faults
+
+sizeof 
+overflow detection
+memcpy source destionation overlap
+
 process address space
 endianness 
 sizeof ,offset, container
