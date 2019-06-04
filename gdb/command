@@ -1,0 +1,9 @@
+
+set $pos = 0
+prin
+printf "%d: %x\n", $pos, _objectVector.mReqs[$pos++].mSignature.mDescriptor.mValue
+
+gdb) set $pos = 0
+set $pos = 0
+(gdb) p/x _objectVector.mReqs[$pos++].mSignature.mData
+

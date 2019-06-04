@@ -1,0 +1,48 @@
+#include<iostream>
+#include<cstring>
+
+using namespace std;
+
+class String {
+    char *buf;
+    int size;
+
+    public:
+      String() {
+          size = 0;
+          bug = new char[1];
+          *buf ='\0';
+      }
+      String(const char *p)
+      {
+          size = strlen(p);
+          buf = new char[size + 1];
+          strcpy(buf, p);
+          *(buf + size) = '\0';
+      }
+
+      int length() 
+      {
+          return size;
+      }
+
+      void show()
+      {
+          cout << buf << endl;
+      }
+      ~string() 
+      {
+          delete[] buf;
+      }
+};
+
+int main()
+{
+    String s1,s2("hellow hi ");
+    s2.show();
+
+    String s3 = s2;
+
+    s3.show();
+    return 0;
+}

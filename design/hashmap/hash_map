@@ -1,0 +1,81 @@
+#include<iostream>
+
+using namespace std;
+//index = hash(key);
+//table[index] = value;
+//hash func = key mode size
+//handle collsion
+//rehashing
+
+
+// Hash node 
+class Node
+{
+    public:
+
+         Node(int _key, int _value, Node *_ptr): mKey(_key), mValue(_value), mNext_Ptr(_ptr)
+         {
+          cout << "Node Ctor " << " key "  << mKey <<  " " << "mValue " << mValue << " next_ptr " << mNext_Ptr << endl;
+         }
+
+         ~Node() { }
+         int get_key();
+         int get_value();
+         Node * get_next();
+     private:
+         int mValue;
+         int mKey;
+         Node *mNext_Ptr;
+};
+
+int Node::get_key() { return mKey; }
+
+int Node::get_value() { return mValue; }
+
+Node* Node:: get_next() { return mNext_Ptr; }
+
+class Hash_List
+{
+    public:
+        Hash_List()
+        {
+        }
+
+        void insert(Node *_ptr);
+    private:
+        Node *mList_Head;
+        Node *mback;
+        int mSize;
+};
+
+void Hash_List :: insert(Node *_ptr)
+{
+    
+}
+
+class Hash_Map
+{
+    public:
+        Hash_Map(int _capacity): mCapacity(_capacity)
+        {
+            list = new Node[mCapacity];
+        }
+
+        ~Hash_Map() { }
+
+        void insert(int _key, int _value)
+        {
+            int index = hash(_key);
+
+        }
+    private:
+        int mCapacity;
+        int mCur_size;
+        int hash(int _key);
+        Node *mlist;
+};
+
+int Hash_Map :: hash(int _key)
+{
+    return _key % mCapcity;
+}

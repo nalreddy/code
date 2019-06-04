@@ -1,0 +1,14 @@
+#include<iostream>
+#incude<stdio.h>
+
+using namespace std;
+
+int main()
+{
+    char* p = new char(10);
+    std::memcpy(p, "hello", 4);
+
+    cout << "p = " << p << endl;
+
+    return 0;
+}
