@@ -1,0 +1,23 @@
+#include<iostream>
+
+using namespace std;
+
+class A
+{
+    public:
+        A(int x) : { ptr = new int(x); }
+        void set(int x) { *ptr = x; }
+        void print() { cout << " x = " << x << endl; }
+
+    private:
+        int *ptr;
+};
+
+int main()
+{
+    A a(7);
+
+    a.print();
+
+    return 0;
+}

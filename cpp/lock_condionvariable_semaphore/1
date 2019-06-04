@@ -1,0 +1,35 @@
+#include<iostream>
+#include<pthread.h>
+
+using namespace std;
+
+int i_shared = 0;
+
+void* producer(void *data)
+{
+    cout << " calling thread producer  " << endl;
+
+    return NULL;
+}
+
+void* consumer(void *data)
+{
+    cout << " calling thread consumer " << endl;
+
+    return NULL;
+}
+
+int main()
+{
+    pthread_t prod;
+    pthread_t con;
+
+    pthread_create(&prod, NULL, producer, NULL);
+    pthread_create(&con, NULL, consumer, NULL);
+
+
+    pthread_join(prod, NULL); 
+    pthread_join(con, NULL); 
+
+    return 0;
+}

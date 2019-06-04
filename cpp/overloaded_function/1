@@ -1,0 +1,36 @@
+#include<iostream>
+
+using namespace std;
+
+void show(int x)
+{
+    cout << " empty param \n";
+}
+
+void show(int x = 2)
+{
+    cout << " empty param \n";
+}
+#if 0
+void show(int a)
+{
+    cout << " one param \n";
+}
+
+void show(char a)
+{
+    cout << " char one param \n";
+}
+void show(char a, char b)
+{
+    cout << " char two  param \n";
+}
+
+#endif
+int main()
+{
+    show(1);
+    show();
+
+    return 0;
+}
