@@ -1,0 +1,224 @@
+//
+// © Copyright 2018 Hewlett Packard Enterprise Development LP
+// All Rights Reserved
+//
+
+#define BOOST_TEST_MODULE TestDigestManager
+#include <boost/foreach.hpp>
+#include <boost/test/unit_test.hpp>
+//#include "svtdp/digest.hpp"
+#include <stdexcept>
+//#include "aligned_scoped_array.hpp"
+
+
+const size_t BUFFER_ALIGNMENT = 8 * KB;
+
+class DigestManagerFixture : public CommonFixture2
+{
+public:
+    DigestManagerFixture() { }
+    ~DigestManagerFixture() { }
+};
+#if 0
+// Used to parameterize test cases with DigestType parameters
+typedef boost::mpl::list<boost::mpl::int_<ObjectSignature::Sha1>,
+                         boost::mpl::int_<ObjectSignature::Sha2_160> > digest_type_list;
+#endif
+SVT_DEFINE_PRINTABLE_ENUM( DigestLibraryType,
+        ((OpenSsl))
+        ((IsalMb))
+        ((Invalid))
+        );
+
+SVT_DEFINE_PRINTABLE_ENUM( DigestType,
+        ((DefaultDigestType))
+        ((Sha1))
+        ((Sha2_160))
+        );
+
+SVT_DEFINE_PRINTABLE_ENUM( InputType,
+        ((Single))
+        ((Batch))
+        );
+
+SVT_DEFINE_PRINTABLE_ENUM( TestType,
+        ((Positive))
+        ((Negative))
+        );
+
+template<DigestLibraryType IDigestLibraryType, DigestType IDigestType, InputType IInputType, TestType ITestType>
+    struct DataDescriptorBase
+{
+    BOOST_STATIC_CONSTANT( InputType, inputType = IInputType );
+    BOOST_STATIC_CONSTANT( TestType, testType = ITestType );
+
+    static const ObjectSignature::DigestType digesttype()
+    {
+        switch (IDigestType)
+        {
+            case DefaultDigestType:
+                return ObjectSignature::DefaultDigestType;
+            case Sha1:
+                return ObjectSignature::Sha1;
+            case Sha2_160:
+                return ObjectSignature::Sha2_160;
+        }
+    }
+
+    static const std::string digestlibrarytype()
+    {
+        switch (IDigestLibraryType)
+        {
+            case OpenSsl:
+                return "OpenSsl";
+            case IsalMb:
+                return "IsalMb";
+            case Invalid:
+                return "Invalid";
+        }
+    }
+};
+
+template<DigestLibraryType IDigestLibraryType, DigestType IDigestType, InputType IInputType, TestType ITestType>
+    struct DataDescriptor :
+        public DataDescriptorBase<IDigestLibraryType, IDigestType, IInputType, ITestType>
+{
+};
+
+#define DEFINE_DATA_DESCRIPTOR( digestlibrarytype, digesttype, inputtype, testtype )        \
+                                                                                            \
+template<> struct DataDescriptor<digestlibrarytype, digesttype, inputtype, testtype> :      \
+public DataDescriptorBase<digestlibrarytype, digesttype, inputtype, testtype>               \
+{                                                                                           \
+};                                                                                          \
+                                                                                            \
+typedef DataDescriptor<digestlibrarytype, digesttype, inputtype, testtype> Descriptor##digestlibrarytype##digesttype##inputtype##testtype;
+
+DEFINE_DATA_DESCRIPTOR( OpenSsl, Sha1, Single, Positive );
+DEFINE_DATA_DESCRIPTOR( OpenSsl, Sha2_160, Single, Positive );
+DEFINE_DATA_DESCRIPTOR( OpenSsl, DefaultDigestType, Single, Positive );
+DEFINE_DATA_DESCRIPTOR( IsalMb, Sha1, Single, Positive );
+DEFINE_DATA_DESCRIPTOR( IsalMb, Sha2_160, Single, Positive );
+DEFINE_DATA_DESCRIPTOR( IsalMb, DefaultDigestType, Single, Positive );
+DEFINE_DATA_DESCRIPTOR( OpenSsl, Sha1, Batch, Positive );
+DEFINE_DATA_DESCRIPTOR( OpenSsl, Sha2_160, Batch, Positive );
+DEFINE_DATA_DESCRIPTOR( IsalMb, Sha1, Batch, Positive );
+DEFINE_DATA_DESCRIPTOR( IsalMb, Sha2_160, Batch, Positive );
+DEFINE_DATA_DESCRIPTOR( Invalid, DefaultDigestType, Single, Negative );
+
+typedef boost::mpl::list<
+DescriptorOpenSslDefaultDigestTypeSinglePositive,
+DescriptorIsalMbDefaultDigestTypeSinglePositive,
+DescriptorInvalidDefaultDigestTypeSingleNegative
+>::type DigestLibraryType_Tunable_Type_List;
+
+BOOST_FIXTURE_TEST_SUITE(TestDigestManager, DigestManagerFixture)
+
+BOOST_AUTO_TEST_CASE_TEMPLATE(digestlibrary_tunable, Descriptor, DigestLibraryType_Tunable_Type_List)
+{
+    TEST_CASE_TIMER;
+
+    BOOST_TEST_MESSAGE( "" );
+    BOOST_TEST_MESSAGE( "DigestLibraryType: " << Descriptor::digestlibrarytype( ) );
+
+    TestType testType = Descriptor::testType;
+
+    BOOST_TEST_MESSAGE( "TestType: " << testType );
+    BOOST_TEST_MESSAGE( "" );
+
+    if (testType == Positive)
+    {
+        BOOST_TEST_MESSAGE("positive ");
+    }
+    else
+    {
+        BOOST_TEST_MESSAGE("negative ");
+    }
+}
+#if 0
+typedef boost::mpl::list<
+DescriptorOpenSslSha1SinglePositive,
+DescriptorOpenSslSha2_160SinglePositive,
+DescriptorIsalMbSha1SinglePositive,
+DescriptorIsalMbSha2_160SinglePositive,
+DescriptorOpenSslSha1BatchPositive,
+DescriptorOpenSslSha2_160BatchPositive,
+DescriptorIsalMbSha1BatchPositive,
+DescriptorIsalMbSha2_160BatchPositive
+>::type digest_calculation_type_list;
+
+BOOST_AUTO_TEST_CASE_TEMPLATE(digest_calculation, Descriptor, digest_calculation_type_list)
+{
+    TEST_CASE_TIMER;
+
+    // Set the given digest library and invoke
+    // Digest Manager methods for single/batch hashing.
+    SvtLoggerPtr loggerPtr(SvtLogger::Create( "digestManagerTest" ));
+    StaticConfig::getSingleton()->addString("StorageStack", "HWI");
+
+    // Create with given digest library
+    StaticConfig::getSingleton()->addString("/DigestManager/DigestLibraryType", Descriptor::digestlibrarytype());
+
+    DigestManagerPtr digestManager;
+    digestManager = DigestManager::create(loggerPtr);
+
+    InputType inputType = Descriptor::inputType;
+    TestType testType = Descriptor::testType;
+
+    ObjectSignature::SizeType dataSizeType = ObjectSignature::data_8K;
+    const size_t dataSizeBytes = ObjectSignature::getSizeBytes(dataSizeType);
+    const size_t buffer_size = (inputType == Single) ?
+        ObjectSignature::getSizeBytes( ObjectSignature::data_8K ) :
+        ObjectSignature::getSizeBytes( ObjectSignature::data_64K );
+
+    BOOST_TEST_MESSAGE( "" );
+    BOOST_TEST_MESSAGE( "DigestLibraryType: " << Descriptor::digestlibrarytype( ) );
+    BOOST_TEST_MESSAGE( "DigestType: " << Descriptor::digesttype( ) );
+    BOOST_TEST_MESSAGE( "InputType: " << inputType );
+    BOOST_TEST_MESSAGE( "TestType: " << testType );
+    BOOST_TEST_MESSAGE( "" );
+
+    const ObjectSignature::DigestType digestType = Descriptor::digesttype();
+
+    svt::aligned_scoped_array<uint8_t> buf(allocateAligned<uint8_t>(buffer_size, BUFFER_ALIGNMENT ));
+    UniqueBufferGenerator::generate( buf.get(), buf.get() + buffer_size );
+
+    size_t numObjs = buffer_size / (ObjectSignature::getSizeBytes(dataSizeType)) ;
+
+    DigestManagerReqVector digestMgrReqVec;
+
+    typedef boost::container::static_vector<ObjectSignature,
+                                 ConstObjectVector::MAX_OBJECTS> sigVector;
+    sigVector sigVec;
+
+    for( size_t i = 0; i < numObjs; ++i )
+    {
+        sigVec.emplace_back(ObjectSignature::Descriptor(dataSizeType, digestType),
+                          ObjectSignature::Uninitialized);
+        uint8_t* dataBuf = buf.get() + ( i * dataSizeBytes );
+        digestMgrReqVec.emplace_back(dataBuf, boost::ref(sigVec[i]));
+    }
+
+    if(!digestMgrReqVec.empty())
+    {
+        if (inputType == Single)
+        {
+            digestManager->calculateSingle(buf.get(), sigVec[0]);
+        }
+        else
+        {
+            digestManager->calculateBatch(digestMgrReqVec);
+        }
+    }
+
+    // Dump the signature(s) obtained above
+    for( size_t i=0; i< numObjs; ++i )
+    {
+        ObjectSignature sig = sigVec[i];
+        BOOST_REQUIRE_EQUAL( sig.getSizeType(), dataSizeType );
+        BOOST_REQUIRE_EQUAL( sig.getDigestType(), digestType );
+        BOOST_TEST_MESSAGE( Descriptor::digestlibrarytype() << " Computed Signature (i = " << i << ") : '" << sig << "'." );
+    }
+}
+#endif
+BOOST_AUTO_TEST_SUITE_END()
