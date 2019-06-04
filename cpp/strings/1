@@ -1,0 +1,14 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    std::string str = "abcd\0";
+    cosnt char* p = str.c_str();
+
+    cout << " len = " << str.length();
+    return 0;
+}
+
