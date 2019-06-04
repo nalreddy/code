@@ -1,10 +1,13 @@
 #include<iostream>
+//#include<cstdint>
+#include<stdint.h>
 
-using namespace std;
+int main() {
+    uint32_t  x : 2;
+    
+    x = 1;
+    
+    std::cout << "x = " << sizeof(x);
 
-int main(int argc , char **argv) {
-
-    for (int i = 1; i < argc ; i++) {
-        cout << argv[i] << endl;
-    }
+    return 0;
 }

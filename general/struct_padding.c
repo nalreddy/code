@@ -3,8 +3,8 @@
 struct A
 {
     char c;
-    int b;
     char e;
+    int b;
 };
 
 int main()

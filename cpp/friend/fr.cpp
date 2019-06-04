@@ -14,6 +14,10 @@ private:
     int b;
 public:
     B()  {  b = 0; }
+    void showA(A& a)
+    {
+        cout << " A = " << A.x <<
+    }
     friend void A::showB(B& x); // Friend function
 };
  

@@ -5,13 +5,13 @@ using namespace std;
 class Adder
 {
     public:
-        Adder(int x) : x(x) { }
-        int operator()(int y) const
+        Adder(const int x) : x(x) { }
+        int operator()(const int y) const
         {
             return x + y;
         }
     private:
-        int x;
+        const int x;
 };
 
 int main()

@@ -15,6 +15,7 @@ struct TNode * getnode(int x){
  temp->data = x;
  return temp;
 }
+
 void in(struct TNode *root)
 {
     if(!root)
