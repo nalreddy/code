@@ -1,0 +1,25 @@
+#include<iostream>
+#include<boost/config.hpp>
+
+using namespace std;
+
+class A
+{
+    BOOST_STATIC_CONSTANT(int, x = 10);
+//    static const int x = 10;
+
+    public :
+    void print()
+    {
+        cout << " x = " << std::min(x, 5); 
+
+    }
+};
+const int A::x;
+
+int main()
+{
+    A a;
+    a.print();
+    return 0;
+}
