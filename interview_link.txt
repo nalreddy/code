@@ -1,12 +1,20 @@
+SYSTEM ENGINEERING QUESTIONS
 
-exception , traps ,syscall entry 
+ How  userspace to kernel  system calls happen
+      exception , traps ,syscall entry 
+
+Function stack, ABI
+     parameters pushed,poped 
+      stack overflow detection
+      what causes, programming erros causes stack overflow
+
 virtual address advs vs disadvs
 
-advs :
-    protection ?
-    program > ram
-    independent position or space locality
-    page faults
+    advs :
+        protection ?
+        program > ram
+        independent position or space locality
+        page faults
 
 sizeof 
 overflow detection
