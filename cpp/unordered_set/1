@@ -1,0 +1,16 @@
+#include <boost/unordered_set.hpp>
+#include <iostream>
+
+int main()
+{
+    typedef boost::unordered_set<size_t> unordered_set;
+    unordered_set set;
+
+
+
+    std::cout << set.size() << '\n';
+    std::cout << set.max_size() << '\n';
+
+
+    return 0;
+}

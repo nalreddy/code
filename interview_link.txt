@@ -1,4 +1,35 @@
+Statemachine compiler : 
+Ragel State Machine Compiler
+SMC  " " "
+
+Learn
+ gdb
+ vim,eclipse
+ c/c++, ds, algo
+ plantuml
+ python,shell script
+
+
+https://www.codeproject.com/Articles/42582/Prototype-Design-Pattern
+https://www.bogotobogo.com/DesignPatterns/introduction.php
+thispointer for cpp
+
+Signals 
+https://www.bogotobogo.com/Linux/linux_process_and_signals.php#signals
+https://www.bogotobogo.com/Linux/linux_process_and_signals.php#fork
+
+IPC :
+https://www.bogotobogo.com/cplusplus/multithreading_ipc.php
+
+fork parent/child , exec,wait,waitpid
+
+socket client/server
+
 SYSTEM ENGINEERING QUESTIONS
+State machine desing --> Vending Machine
+motro -> http://www.drdobbs.com/cpp/state-machine-design-in-c/184401236?pgno=1
+memorypool
+stack unwinding
 
  How  userspace to kernel  system calls happen
       exception , traps ,syscall entry 
@@ -72,7 +103,8 @@ hash imple
 //in code
 thread pool
  //in code
-object pool
+object pool && memory pool *****************************
+https://www.codeproject.com/Articles/746630/O-Object-Pool-in-Cplusplus
 https://gist.github.com/pazdera/1124832
 
 snakes and ladders

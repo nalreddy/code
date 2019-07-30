@@ -1,0 +1,5 @@
+aa str_len 2
+debug curlen 0 seq_len 2 minlen 999999start 0 i = 0
+debug curlen 0 seq_len 2 minlen 999999start 0 i = 1
+char adebug curlen 1 seq_len 2 minlen 999999start 0 i = 2
+ Minlen 999999

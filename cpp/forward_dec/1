@@ -1,0 +1,21 @@
+#include<iostream>
+
+class A;
+
+class B
+{
+    public:
+        B()
+        {
+            ai = new A();
+        }
+        ~B() {}
+    private:
+        A* ai;
+};
+
+int main()
+{
+    B b;
+    return 0;
+}
