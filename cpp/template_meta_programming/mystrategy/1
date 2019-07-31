@@ -1,0 +1,18 @@
+
+class Base
+{
+    public:
+        enum DigType{
+            SHA1,
+            SHA2
+        };
+        template<DigType::Type T>
+        static buildarray(Table &tb)
+        {
+            DigType::Type cur = static_cast
+
+        }
+    private:
+        typedef static array<SslStrategy*, 2>  Table;
+        Table tb;
+};

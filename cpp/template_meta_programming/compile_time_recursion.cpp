@@ -22,11 +22,11 @@ int main()
 
 // Compile-time recursion to assign strategy implementations to an array.
 
-template <ObjectSignatureBase::DigestType T>
+template <ObjectSig::DigestType T>
     void recursivelyAssignDigestStrategies(
-                    ObjectSignatureBaseAccessor::DigestTypeStrategyArrayType& _array )
+                    ObjectSigor::DigestTypeStrategyArrayType& _array )
 {
-        const ObjectSignatureBase::DigestType cur = static_cast<ObjectSignatureBase::DigestType>( T - 1 );
+        const ObjectSigBase::DigestType cur = static_cast<ObjectSign::DigestType>( T - 1 );
             recursivelyAssignDigestStrategies<cur>( _array );
                 _array[cur].reset( new OpenSslDigestStrategy<cur>() );
 }
