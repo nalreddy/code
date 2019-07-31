@@ -29,13 +29,10 @@ template <Base::Type stT>
             EVP_MD_CTX* mdc = EVP_MD_CTX_new();
 
             int result = EVP_DigestInit_ex( mdc, Traits::Struct(), NULL );
-            check( result, "EVP_DigestInit_ex" );
 
             result = EVP_DigestUpdate( mdc, _data, _length );
-            check( result, "EVP_DigestUpdate" );
 
             result = EVP_DigestFinal_ex( mdc, _out, NULL );
-            check( result, "EVP_DigestFinal_ex" );
 
             EVP_MD_CTX_free( mdc );
         }

@@ -20,22 +20,19 @@ int main()
 }
 #endif
 
-// Compile-time recursion to assign strategy implementations to an array.
-
-template <ObjectSig::DigestType T>
-    void recursivelyAssignDigestStrategies(
-                    ObjectSigor::DigestTypeStrategyArrayType& _array )
+template <OSig::DigestType T>
+    void recurStrategies(
+                    Oigor::DigyArrayType& _array )
 {
-        const ObjectSigBase::DigestType cur = static_cast<ObjectSign::DigestType>( T - 1 );
-            recursivelyAssignDigestStrategies<cur>( _array );
-                _array[cur].reset( new OpenSslDigestStrategy<cur>() );
+        const Oe::DigestType cur = static_cast<Obegn::DigestType>( T - 1 );
+            recurStrategies<cur>( _array );
+                _array[cur].reset( new Orategy<cur>() );
 }
 
 template<>
-    void recursivelyAssignDigestStrategies<static_cast<ObjectSignatureBase::DigestType>( 0 )>(
-                    ObjectSignatureBaseAccessor::DigestTypeStrategyArrayType& _array )
+    void recurStrategies<static_cast<OeBase::DigestType>( 0 )>(
+                    Objer::DyType& _array )
 {
-        // Terminate Recursion
 }
 
 template <unsigned n>
