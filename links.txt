@@ -26,11 +26,14 @@ fork parent/child , exec,wait,waitpid
 socket client/server
 
 SYSTEM ENGINEERING QUESTIONS
+
+Ring buffer implementation
+bitmap  implementation , large bitmap
 State machine desing --> Vending Machine
 motro -> http://www.drdobbs.com/cpp/state-machine-design-in-c/184401236?pgno=1
 memorypool
 stack unwinding
-
+event subscription and notification
  How  userspace to kernel  system calls happen
       exception , traps ,syscall entry 
 

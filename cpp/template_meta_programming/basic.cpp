@@ -25,7 +25,7 @@ int A<z>::sz()
 
 int main()
 {
-    A<100> *a = new A<100>();
+    A<> *a = new A<>();
     cout << " size "  << a->sz();
     return 0;
 }
