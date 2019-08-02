@@ -25,7 +25,6 @@ class Get:
 
         void apply(const CachedO& cr)
         {
-            SVT_DEBUG_ASSERT(mComplete == false, "Already complete");
             mCr = cr;
             boost::mutex::scoped_lock lock(mMutex);
             mComplete = true;
@@ -40,7 +39,7 @@ class Examplae
 //example
 void Thread()
    {
-           thread::set_name(boost::str(boost::format("hdl-%1%") % mName));
+           thread::set_name(boost::str(boost::format("l-%1%") % mName));
 
                while (true)
                {
