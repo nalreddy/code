@@ -2,6 +2,15 @@
 
 using namespace std;
 
+#if 0
+T * p = reinterpret_cast<T*>(mAddress);
+for(uint64_t i=0; i<count; i++)
+{
+    new (p) T();
+    p++;
+}
+
+#endif
 class A
 {
     public:

@@ -1,0 +1,3 @@
+Blocking request
+request for alloc, but couldn't get it. add request to wait queue;
+free dealloc request. notify waiters , unblock waiters
