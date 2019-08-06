@@ -1,101 +1,28 @@
-class OJob : public boost::noncopyable,
-    public boost::intrusive::list_base_hook<>
+#include <boost/function.hpp>
+#include"jobmgr.hpp"
+
+JobOGroup::JobOGroup(uint32_t numThreads, JobMgr& jobMgr) :
+    mExit(false),
+    mThreadCount(numThreads),
+    mJobMgr(jobMgr),
+    mMutex(mJobMgr.getJobMutex())
 {
-    public:
-        OJob(Job& job) : mJob(job) {}
-
-        ~OJob() {}
-
-        void* operator new(size_t size);
-
-        void operator delete(void* ptr)
-        {
-            //  .free(ptr);
-        }
-
-    private:
-        Job& mJob;
-};
-
-class JobMgr
-{
-    addOJob(Job& job)
-    {
-        OJob* oJob = new OJob(job);
-
-        boost::mutex::scoped_lock lock(mutex);
-
-        if (mOGroup && mOGroup->Running())
-        {
-            mJobList.push_back(*offloadedJob);
-
-            mOGroup->notify();
-        }
-    }
-
-    Job* getOJob()
-    {
-        boost::mutex::scoped_lock lock(mutex);
-        OffloadedJobListType::iterator iter = mJobList.begin();
-
-        if (iter != mJobList.end()) {
-            OJob& ojob= *iter;
-            mJobList.erase(mJobList.iterator_to(ojob));
-            Job& job = oJob.getJob();
-            delete &offloadedJob;
-            return &job;
-        } else {
-            return NULL;
-        }
-    }
-    private:
-
-    typedef boost::intrusive::list<OJob>   JobListType;
-    iJobListType                               mJobList;
-    boost::scoped_ptr<JobOGroup> mOGroup;
-
-
 }
 
-class JobOGroup
+void JobOGroup::start()
 {
-
-    public:
-        JobOGroup(
-                uint32_t numThreads);
-
-        virtual ~JobOGroup();
-
-        void start();
-        void stop();
-        bool Running() { return !mExit; }
-
-        virtual void notify() { mCond.notify_one(); }
-
-    private:
-        void run(uint32_t threadId);
-
-        bool                                    mExit;
-        boost::mutex&                           mMutex;
-        boost::condition_variable               mCond;
-        uint32_t                                mThreadCount;
-        boost::scoped_ptr<boost::thread_group>  mThreadGroup;
-};
-
-    void
-start()
-{
+    std::cout << " JobOgroup started " << std::endl;
     mThreadGroup.reset(new boost::thread_group);
     for (uint32_t i = 0; i < mThreadCount; ++i) {
-        mThreadGroup->create_thread(boost::bind(&oup::run, boost::ref(*this), i));         }
+        mThreadGroup->create_thread(boost::bind(&JobOGroup::run, boost::ref(*this), i));
+    }
 }
 
-    void
-stop()
+void JobOGroup::stop()
 {
     {
-        boost::mutex::scoped_lock lock(mutex);
-        if (! mThreadGroup) {
+        boost::mutex::scoped_lock lock(mMutex);
+        if (!mThreadGroup) {
             return;
         }
         mExit = true;
@@ -105,29 +32,95 @@ stop()
     mThreadGroup.reset();
 }
 
-run(uint32_t threadId)
+void JobOGroup::run(uint32_t threadId)
 {
     Job* job = NULL;
 
+    std::cout<< " group run >" << std::endl;
     while (!mExit)
     {
+        std::cout << "entrt while " << std::endl;
         {
-            boost::mutex::scoped_lock lock(mutex);
-            while (((job = mManager.getOjob()) == NULL) && !mExit) {
+            boost::mutex::scoped_lock lock(mMutex);
+            while (((job = mJobMgr.getOJob()) == NULL) && !mExit) {
+                std::cout << " waiting for job"<< std::endl;
                 mCond.wait(lock);
             }
         }
 
         if (job) {
-            Job::SubOpcodeType nextSubJob = job->getCurSubJob();
-            job->doSubJob(nextSubJob); }
+            JobOpCode nextSubJob = job->getSubJob();
+            std::cout << " Got the Job" << nextSubJob << std::endl;
+            job->doSubTask(nextSubJob);
+            if (nextSubJob < MAX)
+                mJobMgr.addOJob(*job);
+            std::cout << " Got the Job" << std::endl;
+        }
     }
+#if 0
+            while ((job = mJobMgr.getOJob()))
+            {
+                JobOpCode nextSubJob = job->getSubJob();
+                job->doSubTask(nextSubJob);
+                std::cout << " job found " << std::endl;
+            }
 
-    while ((job = mMGR.getOJob()))
+#endif
+}
+
+JobMgr::JobMgr(uint32_t threadCount):
+    mThreadCount(threadCount),
+    mJobGroup()
+{
+}
+
+void JobMgr::start()
+{
+    mJobGroup.reset(new JobOGroup(mThreadCount, *this));
+    mJobGroup->start();
+}
+
+void JobMgr::stop()
+{
+    if (mJobGroup != NULL) {
+        mJobGroup->stop();
+        boost::mutex::scoped_lock lock(mMutex);
+        mJobGroup.reset();
+    }
+}
+
+void JobMgr:: addOJob(Job& job)
+{
+    OJob* oJob = new OJob(job);
+
+    boost::mutex::scoped_lock lock(mMutex);
+
+    if (mJobGroup && mJobGroup->isRunning())
     {
-        Job::SubkOpcodeType nextSubJob = job->getCurrentSubJob();
-        job->doSubJob(nextSubJob);
+        mJobList.push_back(*oJob);
+        std::cout << "added to  list " << std::endl;
+        mJobGroup->notify();
+    } else
+    {
+        mJobList.push_back(*oJob);
     }
+}
 
+Job* JobMgr::getOJob()
+{
+    //boost::mutex::scoped_lock lock(mMutex);
+    JobListType::iterator iter = mJobList.begin();
+
+    if (iter != mJobList.end()) {
+        OJob& oJob = *iter;
+        mJobList.erase(mJobList.iterator_to(oJob));
+        Job& job = oJob.getJob();
+        delete &oJob;
+        std::cout << " getOjob" << std::endl;
+        return &job;
+    } else {
+        std::cout << " getOjob NULL" << std::endl;
+        return NULL;
+    }
 }
 

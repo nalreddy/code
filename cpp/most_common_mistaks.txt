@@ -1,0 +1,4 @@
+https://www.toptal.com/c-plus-plus/top-10-common-c-plus-plus-developer-mistake
+1.converstion constructures use explicit keyword
+2.always Pass class OBJECT by reference instead of pass by value  otherwise cause object splicing 
+3.Using Invalidated Iterators and References
