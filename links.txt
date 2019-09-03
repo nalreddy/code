@@ -1,6 +1,17 @@
+
+https://en.wikipedia.org/wiki/SOLID
+
 Statemachine compiler : 
 Ragel State Machine Compiler
 SMC  " " "
+
+
+serialization of binary tree
+
+How to synchronise threads
+How to synchronise diff process in system
+How to synchronise diff process in systen system
+
 
 Learn
  gdb

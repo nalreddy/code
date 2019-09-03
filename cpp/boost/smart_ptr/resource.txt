@@ -1,0 +1,2 @@
+https://www.fluentcpp.com/2017/08/22/smart-developers-use-smart-pointers-smart-pointers-basics/
+https://www.learncpp.com/cpp-tutorial/15-5-stdunique_ptr/
