@@ -1,0 +1,23 @@
+insert and delete
+Applications
+print given keys in range, delete
+is BST
+LCA
+inorder traveral of bst is sorted order low to high
+inorder succesor and prececor
+find miss aligned elements
+floor and celing
+subarray and sliding window problems
+
+https://www.geeksforgeeks.org/maximum-unique-element-every-subarray-size-k/
+https://www.geeksforgeeks.org/kth-largest-element-bst-using-constant-extra-space/
+https://www.geeksforgeeks.org/sum-of-k-largest-elements-in-bst/
+https://www.geeksforgeeks.org/find-postorder-traversal-of-bst-from-preorder-traversal/
+https://www.geeksforgeeks.org/inorder-predecessor-and-successor-for-a-given-key-in-bst-iterative-approach/
+https://www.geeksforgeeks.org/floor-in-binary-search-tree-bst/
+https://www.geeksforgeeks.org/sum-of-cousin-nodes-of-a-given-node-in-a-bst/
+https://www.geeksforgeeks.org/subarray-whose-sum-is-closest-to-k/
+https://www.geeksforgeeks.org/construct-a-bst-from-given-postorder-traversal-using-stack/
+https://www.geeksforgeeks.org/find-the-closest-element-in-binary-search-tree-space-efficient-method/
+https://www.geeksforgeeks.org/check-whether-bst-contains-dead-end-not/
+https://www.geeksforgeeks.org/binary-tree-binary-search-tree-conversion-using-stl-set/

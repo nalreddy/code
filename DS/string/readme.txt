@@ -1,0 +1,1 @@
+diff memcpy vs strcpy

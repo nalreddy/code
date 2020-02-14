@@ -1,0 +1,159 @@
+Desing and implement circular buffer or ring buffer
+   wiki
+   https://embeddedartistry.com/blog/2017/05/17/creating-a-circular-buffer-in-c-and-c/
+
+System programming 
+ http://cs241.cs.illinois.edu/coursebook/index.html
+   https://github.com/angrave/SystemProgramming/wiki
+forking vs threading -> how are thet different ,when to use what 
+ what happens if we fork in multi threaded program issues 
+       https://www.linuxprogrammingblog.com/threads-and-fork-think-twice-before-using-them
+ http://www.geekride.com/fork-forking-vs-threading-thread-linux-kernel/
+  fork, thread  -> uses clone with diff flags
+  fork ->ipc  , no sharing memory
+  thread ->mutex,semaphores,condition variable 
+
+Storage stack diag linux 
+https://upload.wikimedia.org/wikipedia/commons/3/30/IO_stack_of_the_Linux_kernel.svg
+
+malloc and  wrapper for malloc  using dlsym
+
+
+samba vfs 
+https://lalatendu.org/2014/04/20/glusterfs-vfs-plugin-for-samba/
+
+Complition steps
+https://www.tenouk.com/ModuleW.html
+gcc  -static, -g
+od,objdump,readelf,size,sitrings, nm,xxd
+
+http://web.archive.org/web/20140719092417/http://www.altdev.co/2011/12/14/c-c-low-level-curriculum-part-3-the-stack/
+
+
+https://en.wikipedia.org/wiki/SOLID
+
+Statemachine compiler : 
+Ragel State Machine Compiler
+SMC  " " "
+
+
+serialization of binary tree
+
+How to synchronise threads
+How to synchronise diff process in system
+How to synchronise diff process in systen system
+
+
+Learn
+ gdb
+ vim,eclipse
+ c/c++, ds, algo
+ plantuml
+ python,shell script
+
+
+https://www.codeproject.com/Articles/42582/Prototype-Design-Pattern
+https://www.bogotobogo.com/DesignPatterns/introduction.php
+thispointer for cpp
+
+Signals 
+https://www.bogotobogo.com/Linux/linux_process_and_signals.php#signals
+https://www.bogotobogo.com/Linux/linux_process_and_signals.php#fork
+
+IPC :
+https://www.bogotobogo.com/cplusplus/multithreading_ipc.php
+
+fork parent/child , exec,wait,waitpid
+
+socket client/server
+
+SYSTEM ENGINEERING QUESTIONS
+
+Ring buffer implementation
+bitmap  implementation , large bitmap
+State machine desing --> Vending Machine
+motro -> http://www.drdobbs.com/cpp/state-machine-design-in-c/184401236?pgno=1
+memorypool
+stack unwinding
+event subscription and notification
+ How  userspace to kernel  system calls happen
+      exception , traps ,syscall entry 
+
+Function stack, ABI
+     parameters pushed,poped 
+      stack overflow detection
+      what causes, programming erros causes stack overflow
+
+What is Virtual memory
+Difff between memcpy vs strcpy
+virtual address advs vs disadvs
+
+    advs :
+        protection ?
+        program > ram
+        independent position or space locality
+        page faults
+
+sizeof 
+overflow detection
+memcpy source destionation overlap
+
+process address space
+endianness 
+sizeof ,offset, container
+
+struct padding
+
+memmove
+
+diff strcpy ,memcpy
+
+process address space
+
+spin lock implementation
+semaphore implementation
+
+diff spin vs mutex vs semaphore
+
+priority inversion
+live lock vs dead lock
+
+why can't sleep in interrupt
+
+sleeping barber problem
+
+volatile keyword
+https://barrgroup.com/Embedded-Systems/How-To/C-Volatile-Keyword
+
+dinning philosopher 
+https://www.cs.indiana.edu/classes/p415-sjoh/hw/project/dining-philosophers/index.htm
+
+LRcache
+
+memory buddy system
+
+vmllaoc vs kamalloc
+
+ip address validation
+
+hashtable imple
+https://medium.com/@aozturk/simple-hash-map-hash-table-implementation-in-c-931965904250
+LRU cache
+http://bhrigu.me/blog/2017/01/22/lru-cache-c-plus-plus-implementation/
+
+ip address validate and convert to hex
+semaphore
+
+median of diff array
+Boogle--> find word in matrix
+hash imple
+//in code
+thread pool
+ //in code
+object pool && memory pool *****************************
+https://www.codeproject.com/Articles/746630/O-Object-Pool-in-Cplusplus
+https://gist.github.com/pazdera/1124832
+
+snakes and ladders
+tic tac
+

@@ -1,0 +1,1 @@
+find . -type f -print | grep -E '\.(c(pp)?|h(pp))$' | grep -v nar-de > cscope.files

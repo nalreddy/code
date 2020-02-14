@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+struct Student {
+    uint64_t mVolume       : 4;
+    uint64_t mTier         : 3;
+    uint64_t mSize         : 3;
+    uint64_t mMiniVolumeId : 32;
+    uint64_t mAllocCount   : 16;
+    uint64_t mExtent   : 1;
+    uint64_t mUnUsed       : 5;
+
+};
+
+int main () {
+#if 0
+    FILE *of;
+    of= fopen ("c1.txt", "w");
+    if (of == NULL) {
+        fprintf(stderr, "\nError to open the file\n");
+        exit (1);
+    }
+    struct Student inp1 = {1, 3, 3, 7, 5};
+    fwrite (&inp1, sizeof(struct Student), 1, of);
+    if(fwrite != 0)
+        printf("Contents to file written successfully !\n");
+    else
+        printf("Error writing file !\n");
+    fclose (of);
+#else
+    FILE *inf;
+    struct Student inp;
+    inf = fopen ("c1.txt", "r");
+    if (inf == NULL) {
+        fprintf(stderr, "\nError to open the file\n");
+        exit (1);
+    }
+    while(fread(&inp, sizeof(struct Student), 1, inf))
+        printf ("= %d = %d = %d = %d = %d = %d \n", inp.mVolume, inp.mTier, inp.mSize, inp.mMiniVolumeId, inp.mAllocCount, inp.mUnUsed);
+    fclose (inf);
+#endif
+}
