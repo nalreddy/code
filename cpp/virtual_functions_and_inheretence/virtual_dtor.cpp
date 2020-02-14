@@ -1,5 +1,4 @@
-A virtual constructor is not possible but virtual destructor is possible. Let us experiment....
-
+//A virtual constructor is not possible but virtual destructor is possible. Let us experiment....
 #include <iostream>
 
 using namespace std;
@@ -7,28 +6,28 @@ using namespace std;
 class Base
 {
     public:
-            Base(){
-                        cout << "Base Constructor Called\n";
-                            }
-                ~Base(){
-                            cout << "Base Destructor called\n";
-                                }
+        Base(){
+            cout << "Base Constructor Called\n";
+        }
+        virtual ~Base(){
+            cout << "Base Destructor called\n";
+        }
 };
 
 class Derived1: public Base
 {
     public:
-            Derived1(){
-                        cout << "Derived constructor called\n";
-                            }
-                ~Derived1(){
-                            cout << "Derived destructor called\n";
-                                }
+        Derived1(){
+            cout << "Derived constructor called\n";
+        }
+        ~Derived1(){
+            cout << "Derived destructor called\n";
+        }
 };
 int main()
 {
-        Base *b = new Derived1();
-            delete b;
+    Base *b = new Derived1();
+    delete b;
 }
 
 

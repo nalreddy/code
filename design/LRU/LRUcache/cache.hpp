@@ -12,14 +12,14 @@ class DigestCache : public boost::noncopyable
         DigestCache( const uint64_t bucketCount );
         virtual ~DigestCache();
 
-        uint64_t numDigestAdds() const { return mAddsCtr->value(); }
-        void incrementAdds() { ++mAddsCtr; }
-        uint64_t numDigestAlreadyExists() const { return mAlreadyExistsCtr->value(); }
-        void incrementAlreadyExists() { ++mAlreadyExistsCtr; }
-        uint64_t numDigestCacheHits() const { return mCacheHitsCtr->value(); }
-        void incrementCacheHits() const { ++mCacheHitsCtr; }
-        uint64_t numDigestEvictions() const { return mEvictionsCtr->value(); }
-        void incrementEvictions() { ++mEvictionsCtr; }
+        uint64_t numDigestAdds() const { return mAddsCounter->value(); }
+        void incrementAdds() { ++mAddsCounter; }
+        uint64_t numDigestAlreadyExists() const { return mAlreadyExistsCounter->value(); }
+        void incrementAlreadyExists() { ++mAlreadyExistsCounter; }
+        uint64_t numDigestCacheHits() const { return mCacheHitsCounter->value(); }
+        void incrementCacheHits() const { ++mCacheHitsCounter; }
+        uint64_t numDigestEvictions() const { return mEvictionsCounter->value(); }
+        void incrementEvictions() { ++mEvictionsCounter; }
 
         virtual void add( const ODigest& _sig );
         virtual bool find( const ODigest& _sig ) const;
@@ -71,16 +71,16 @@ class DigestCache : public boost::noncopyable
             boost::intrusive::equal<std::equal_to<Node> >,
             boost::intrusive::hash<boost::hash<Node> >,
             boost::intrusive::constant_time_size<false>,
-            boost::intrusive::power_2_buckets<true>  // NOTE: value of false may have performance implications.
+            boost::intrusive::power_2_buckets<true>
         > SetType;
 
         typedef std::vector<SetType::bucket_type> BucketVector;
 
         size_t                   mCapacity;
-                     mAddsCtr;
-        atomic_t             mAlreadyExistsCtr;
-        mutable size_t     mCacheHitsCtr;
-                     mEvictionsCtr;
+                     mAddsCounter;
+        atomic_t             mAlreadyExistsCounter;
+        mutable size_t     mCacheHitsCounter;
+                     mEvictionsCounter;
         std::vector<Node>        mNodeVector;
         FreeList                 mFreeList;
         mutable EvictionList     mEvictionList;

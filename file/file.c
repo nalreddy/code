@@ -8,7 +8,6 @@
 int main(void)
 {
     FILE* fd = NULL;
-    char 
 
     fd = fopen("test.txt","rw+");
 

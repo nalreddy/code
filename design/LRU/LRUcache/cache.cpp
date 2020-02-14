@@ -1,10 +1,10 @@
 
 DigestCache::DigestCache( const uint64_t bucketCount ) :
     mCapacity( nextPowerOfTwo( bucketCount ) ),
-    mAddsCtr,
-    mAlreadyExistsCtr,
-    mCacheHitsCtr,
-    mEvictionsCtr,
+    mAddsCounter,
+    mAlreadyExistsCounter,
+    mCacheHitsCounter,
+    mEvictionsCounter,
     mNodeVector( mCapacity ),
     mFreeList( mNodeVector.begin(), mNodeVector.end() ),
     mEvictionList(),
@@ -39,7 +39,6 @@ void DigestCache::add( const Digest& _sig )
                 NodeKeyEquality(), icd );
 
     Node* node = NULL;
-    //Already found in cache bring it to front
     if( !result.second )
     {
         node= &(*result.first);

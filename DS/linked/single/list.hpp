@@ -29,6 +29,7 @@ class List
         void operator=(const List<T> &l1);
         int addSameSize(struct Node<T>*, struct Node<T>*);
         void addCarry(struct Node<T>*, struct Node<T>*, int &carry);
+
      private :
         void unlinkCycle(struct Node<T>* slow, struct Node<T>* head);
         struct Node<T>* mHead;
@@ -43,7 +44,7 @@ List<T> :: ~List()
     struct Node<T>* temp = mHead;
 
     if (isEmpty()) {
-        std::cout << " list Dtor , list is empty " << std::endl;
+ //std::cout << " list Dtor , list is empty " << std::endl;
         return;
     }
 
@@ -98,7 +99,7 @@ T List<T> :: pop_Front()
     struct Node<T>* temp = mHead;
 
     if (isEmpty()) {
-        std::cout << "List is empty " << std::endl;
+       // std::cout << "List is empty " << std::endl;
     //assert ???
         return -1;
     }
@@ -147,7 +148,7 @@ T List<T> :: pop_Back()
     struct Node<T>* prev = nullptr; 
 
     if (isEmpty()) {
-        std::cout << "List is empty " << std::endl;
+        //std::cout << "List is empty " << std::endl;
         return -1;
     }
   
@@ -175,20 +176,20 @@ void  List<T> :: print()
     struct Node<T>* temp = mHead;
 
     if (!temp) {
-        std::cout << " print List is empty" << std::endl;
+        //std::cout << " print List is empty" << std::endl;
         return;
     }
 
     while (temp)
     {
-        std::cout << temp->mData << "  ";
+    //    std::cout << temp->mData << "  ";
         temp = temp->mNext;
         // if cycle break;
         if (temp == mHead)
             break;
     }
 
-    std::cout << std::endl;
+//    std::cout << std::endl;
 }
 
 template<typename T>
@@ -278,7 +279,7 @@ void List<T> :: makeCycle()
         cur = cur->mNext;
     }
     cur->mNext = mHead;
-    std::cout << "make cycle " << std::endl;
+   // std::cout << "make cycle " << std::endl;
 }
 
 
@@ -314,7 +315,7 @@ void List<T> :: removeCycle()
 
         if (slow == fast) {
             unlinkCycle(slow, mHead);
-            std::cout << " found cycle " << std::endl;
+            //std::cout << " found cycle " << std::endl;
         }
     }
 }

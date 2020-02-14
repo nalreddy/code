@@ -1,3 +1,7 @@
+
+//memory pool
+// Memory pool mgr-> manages multiple pools, why allocating chunks givng and taking back chunks of memory from pooear
+
 void* alloc()
 {
     void* buf;
