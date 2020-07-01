@@ -1,0 +1,10 @@
+#include<stdio.h>
+#include<string.h>
+
+void main()
+{
+    char *str="{\"a\":1}";
+
+    printf("%ld " , strlen(str)):
+
+}

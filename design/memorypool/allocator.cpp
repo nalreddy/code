@@ -70,12 +70,12 @@ Allocator::shmalloc(size_t size, bool isHuge)
 
 
 bool
-Allocator::allocateBytes(size_t size, AllocType alloctype/*=ALLOC_HUGE*/, size_t alignment/*=MIN_ALIGNED_SIZE*/)
+Allocator::allocateBytes(size_t size, AllocType alloctype, size_t alignment)
 {
   mAllocatedSize = size;
 
   size_t pagesize = static_cast<size_t>(PAGE_SIZE);
-  mSize = (size + pagesize - 1) / pagesize * pagesize; // round up
+  mSize = (size + pagesize - 1) / pagesize * pagesize;
 
   free();
   bool result = false;
@@ -134,7 +134,6 @@ Allocator::free()
 {
   if (mAddress==NULL)
   {
-    // Duplicate free
     return;
   }
 
@@ -145,7 +144,6 @@ Allocator::free()
       return;
   }
 
-  // undo shmat
   if (mAddress!=NULL)
   {
     if (::shmdt((const void*) mAddress) == 0)
@@ -154,7 +152,6 @@ Allocator::free()
     }
   }
 
-  // undo shget
   if (mId>=0)
   {
     if (::shmctl(mId, IPC_RMID, NULL) == 0)

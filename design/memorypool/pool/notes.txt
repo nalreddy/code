@@ -1,0 +1,21 @@
+
+1 Shared memory creation
+    Alignment to System pages
+    Allocate Memory and attach to process
+       From  > heap 
+             > Huge pages
+2 Memory pool creation
+   Take care of aligment;
+   Locking 
+
+   Maintain Simple free list,  init with constructor, placement new
+       Alloc : pop from list
+       Free  : push it back to list
+       Blocking and non blocking APIs
+       Memory pool Stats like number of allocs, current allocated, free, available, failed allocs etc
+
+       Advanced : Bucketsize the pool i.e per cpu buckets lock per bucket, not much contention 
+                 Free can be contented,
+
+3 Consumers overload new,delet operator
+

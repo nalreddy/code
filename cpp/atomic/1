@@ -1,0 +1,20 @@
+#include<string>
+#include<iostream>
+#include <boost/atomic.hpp>
+
+using namespace std;
+
+void f(std::string &name)
+{
+    boost::atomic<size_t>  mBdevCounter(23);
+    mBdevCounter++;
+    std::string nm = "Malloc" + to_string(mBdevCounter);
+    name = nm;
+}
+int main()
+{
+    std::string name;
+    f(name);
+    cout << " name " << name  << endl;
+    return 0;
+}

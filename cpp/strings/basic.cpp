@@ -1,29 +1,16 @@
 #include<iostream>
 #include<string>
+#include<string.h>
 
 using namespace std;
 
 int main()
 {
-#if 0
-    char* p = "abcd";
-//    p[0] = 'x';
-    p = "ijkl";
+    std::string str ="hii";
 
-    char a[] = "pqrs";
+    char *s = strdup(str.c_str());
 
-    a[0] = 'l';
-
-    a = "rfgt";
-#endif
-    const char* p = "abcd";
-//    p[0] = 's';
-    p = "fgfgf";
-    char *const a = "dfgfs";
-
-    a[0] = 'h';
-
-
+    cout << "s " << s << endl;
     return 0;
 }
 

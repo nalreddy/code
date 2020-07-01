@@ -2,10 +2,14 @@
 
 using namespace std;
 
+struct B
+{
+};
+
 class A
 {
     public:
-        A()
+        A(bar b)
         {
             cout << "A ctor \n";
         }
@@ -15,15 +19,20 @@ class A
         }
 
         //static cann't be const, virtual,volatile
-        static void show() const
+        static void show()
         {
             cout << " static \n";
         }
+
+        typedef B bar;
+    private: 
+        B b;
 };
 
 int main()
 {
-    A a;
+    struct B b;
+    A a(b);
 
     A::show();
 

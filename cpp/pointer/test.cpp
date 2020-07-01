@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+struct A
+{
+    int  x;
+};
+
+void capture_any(struct A *val, struct A *out)
+{
+#if 0
+    const struct A **vptr = (struct A *)out;
+    struct spdk_json_val const* tmp= (struct spdk_json_val*) out;
+
+    const struct spdk_json_val **vptr = &tmp;
+    *vptr = val;
+#endif
+
+    out = val;
+}
+
+int main()
+{
+    struct A a1 = {1};
+    struct A a2;
+
+    capture_any( &a1, &a2);
+
+    cout << "a2,x " << a2.x << endl;
+
+    return 0;
+}

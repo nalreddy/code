@@ -3,25 +3,12 @@
 
 int main()
 {
+    unsigned char uuid_t[16] = { 0xfe,0xfd,0xfe,0xfe,0xfc,0xfe,0xfe,0xfe,0xfe,0xfe,0xfe,0xfe,0xfe,0xfe,0xfe,0xfe };
 
-    char *a = "aa";
-    char *b = "bb";
-
-    char **a1 = &a;
-    char **b1 = &b;
-
-
-    char **tmp;
-
-
-    tmp = a1;
-    a1 = b1;
-    b1 = tmp;
-
-
-    printf("a = %s b = %s \n",a, b);
-    printf("a = %p b = %p \n",&a, &b);
-    printf("a = %s b = %s \n",*a1, *b1);
-
+    for (int i = 0; i < 16; i++)
+    {
+        printf("%x",uuid_t[i]);
+    }
+    printf("\n");
     return 0;
 }

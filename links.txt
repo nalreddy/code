@@ -1,7 +1,3 @@
-Desing and implement circular buffer or ring buffer
-   wiki
-   https://embeddedartistry.com/blog/2017/05/17/creating-a-circular-buffer-in-c-and-c/
-
 System programming 
  http://cs241.cs.illinois.edu/coursebook/index.html
    https://github.com/angrave/SystemProgramming/wiki
@@ -128,32 +124,19 @@ https://barrgroup.com/Embedded-Systems/How-To/C-Volatile-Keyword
 dinning philosopher 
 https://www.cs.indiana.edu/classes/p415-sjoh/hw/project/dining-philosophers/index.htm
 
-LRcache
-
 memory buddy system
 
 vmllaoc vs kamalloc
 
 ip address validation
 
-hashtable imple
-https://medium.com/@aozturk/simple-hash-map-hash-table-implementation-in-c-931965904250
-LRU cache
-http://bhrigu.me/blog/2017/01/22/lru-cache-c-plus-plus-implementation/
-
 ip address validate and convert to hex
 semaphore
 
 median of diff array
 Boogle--> find word in matrix
-hash imple
-//in code
 thread pool
  //in code
-object pool && memory pool *****************************
-https://www.codeproject.com/Articles/746630/O-Object-Pool-in-Cplusplus
-https://gist.github.com/pazdera/1124832
-
 snakes and ladders
 tic tac
 

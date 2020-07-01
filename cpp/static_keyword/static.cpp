@@ -5,27 +5,29 @@ using namespace std;
 class A
 {
     private:
-        int x;
+        static int x;
 
     public:
         A () 
         {
-            x = 10;
         }
-        static int i;
         static void print()
         {
-            cout << "i = "<< i << x endl;
+            cout << "x = "<< x << endl;
+        }
+        static void set(int _x)
+        {
+            x = _x;
         }
 };
 
-int A::i = 3;
-
+int A::x = 0;
 
 int main()
 {
+    A::set(10);
     A a;
-
+    A::set(19);
     a.print();
     return 0;
 }
