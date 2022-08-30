@@ -1,0 +1,1 @@
+nm,od,objdump, readelf -a app_binary, size

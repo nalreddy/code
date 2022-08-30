@@ -1,0 +1,33 @@
+ ttps://stackoverflow.com/questions/9305992/if-eds will have the same PID but only when viewed from above. What you (as a user) calls a PID is not what the kernel (looking from below) calls a PID.
+
+ In the kernel, each thread has its own ID, called a PID, although it would possibly make more sense to call this a TID, or thread ID, and they also have a TGID (thread group ID) which is the PID of the first thread that was created when the process was created.
+
+ When a new process is created, it appears as a thread where both the PID and TGID are the same (currently unused) number.
+
+ When a thread starts another thread, that new thread gets its own PID (so the scheduler can schedule it independently) but it inherits the TGID from the original thread.
+
+ That way, the kernel can happily schedule threads independent of what process they belong to, while processes (thread group IDs) are reported to you.
+
+ The following hierarchy of threads may help(a):
+
+	                          USER VIEW
+				                           vvvv vvvv
+							                 |          
+									 <-- PID 43 -->|<----------------- PID 42 ----------------->
+									               |                           |
+										                     |      +---------+          |
+												                   |      | process |          |
+														                 |     _| pid=42  |_         |
+																          __(fork) _/ | tgid=42 | \_ (new thread) _
+																	          /     |      +---------+          |       \
+																			  +---------+   |                           |    +---------+
+																			  | process |   |                           |    | process |
+																			  | pid=43  |   |                           |    | pid=44  |
+																			  | tgid=43 |   |                           |    | tgid=42 |
+																			  +---------+   |                           |    +---------+
+																			                |                           |
+																					<-- PID 43 -->|<--------- PID 42 -------->|<--- PID 44 --->
+																					              |                           |
+																						                              ^^^^^^ ^^^^
+																									                              KERNEL VIEW
+																												      You can see that starting a new process (on the left) gives you a new PID and a new TGID (both set to the same value). Starting a new thread (on the right) gives you a new PID while maintaining the same TGID as the thread that started it.hreads-share-the-same-pid-how-can-they-be-identified

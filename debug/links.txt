@@ -1,0 +1,9 @@
+strace, gdb, crash util
+valgrind
+
+create shared lib 
+  gcc -shared -o libhello.so -fPIC hello.c
+export LD_PRELOAD=/home/patric/libselinux.so.1
+ldd /bin/ls
+
+ LD_PRELOAD=/path/to/my/malloc.so /bin/ls
