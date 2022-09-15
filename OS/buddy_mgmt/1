@@ -1,0 +1,6 @@
+
+struct buddy {
+	size_t size;
+	bool used;
+};
+

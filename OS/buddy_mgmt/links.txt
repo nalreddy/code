@@ -1,0 +1,12 @@
+https://github.com/lotabout/buddy-system
+
+x amount of memory.
+
+init buddy:
+
+alloc:
+	input : size
+	output : addr
+
+
+free

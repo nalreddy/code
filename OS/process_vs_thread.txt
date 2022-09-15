@@ -1,0 +1,10 @@
+In fact, for the Linux kernel itself there's absolutely no difference between what userspace sees as processes (the result of fork) and as threads (the result of pthread_create). Both are represented by the same data structures and scheduled similarly. In kernel nomenclature this is called tasks (the main structure representing a task in the kernel is task_struct), and I'll be using this term from now on.
+
+In Linux, threads are just tasks that share some resources, most notably their memory space; processes, on the other hand, are tasks that don't share resources. For application programmers, proceses and threads are created and managed in very different ways. For processes there's a slew of process-management APIs like fork, wait and so on. For threads there's the pthread library. However, deep in the guts of these APIs and libraries, both processes and threads come into existence through a single Linux system call - clone.
+
+clone() creates a new process, in a manner similar to fork(). It is actually a library function layered on top of the underlying clone() system call.
+Unlike fork() , these calls allow the child process to share parts of its execution context with the calling process, such as the memory space, the table of file descriptors, and the table of signal handlers.
+
+Normally on Unix-like systems, processes are created with fork(). The new process gets its own address space and file descriptor table that starts as a copy of the original. (Linux uses copy-on-write to do this part efficiently.) However, this is too high level for creating threads, so Linux has a separate clone() system call. It works just like fork() except that it accepts a number of flags to adjust its behavior, primarily to share parts of the parent’s execution context with the child.
+
+https://nullprogram.com/blog/2015/05/15/

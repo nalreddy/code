@@ -1,0 +1,20 @@
+Producer Thread number 1 item 1804289383 @ in 0 
+Producer Thread number 1 item 846930886 @ in 1 
+Producer Thread number 2 item 1681692777 @ in 2 
+Producer Thread number 2 item 1714636915 @ in 3 
+Producer Thread number 3 item 1957747793 @ in 4 
+Consumer Thread number 1 item 1804289383 @ 0
+Consumer Thread number 1 item 846930886 @ 1
+Producer Thread number 3 item 424238335 @ in 0 
+Producer Thread number 4 item 719885386 @ in 1 
+Consumer Thread number 2 item 1681692777 @ 2
+Consumer Thread number 2 item 1714636915 @ 3
+Producer Thread number 5 item 1649760492 @ in 2 
+Producer Thread number 4 item 596516649 @ in 3 
+Consumer Thread number 3 item 1957747793 @ 4
+Consumer Thread number 3 item 424238335 @ 0
+Producer Thread number 5 item 1189641421 @ in 4 
+Consumer Thread number 4 item 719885386 @ 1
+Consumer Thread number 4 item 1649760492 @ 2
+Consumer Thread number 5 item 596516649 @ 3
+Consumer Thread number 5 item 1189641421 @ 4
