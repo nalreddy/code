@@ -1,0 +1,316 @@
+libbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0mlibbpf: elf: skipping unrecognized data section(27) .eh_frame
+libbpf: elf: skipping relo section(28) .rel.eh_frame for section(27) .eh_frame
+numa.0 10 12 32 32 
+numa.1 12 10 32 32 
+numa.2 32 32 10 12 
+numa.3 32 32 12 10 
+[1m[45mCollecting IBS CLASSIC samples .....
+[0m

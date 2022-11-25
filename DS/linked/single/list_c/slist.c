@@ -137,3 +137,29 @@ void listMid(List* list) {
 		printf("Mid is %d\n", slow->data);
 	}
 }
+
+void detectLoop(List* list) {
+	Node* slow, *fast;
+	slow = fast = list->head;
+
+	while(fast && fast->next) {
+		slow = slow->next;
+		fast = fast->next->next;
+		if (slow == fast) {
+			printf("loop detected\n");
+			return;
+		}
+	}
+	printf("Noooop loop\n");
+}
+
+void makeLoop(List* list) {
+	Node* last;
+	Node* cur = list->head;
+
+	while(cur) {
+		last = cur;
+		cur = cur->next;
+	}
+	last->next = list->head;
+}

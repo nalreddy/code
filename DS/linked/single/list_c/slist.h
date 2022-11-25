@@ -17,5 +17,6 @@ void removeLoop(List*);
 int length(List*);
 
 void listMid(List*);
+void makeLoop(List*);
 
 void display(List*);

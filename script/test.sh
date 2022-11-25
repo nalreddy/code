@@ -1,49 +1,18 @@
 #echo "program $0 first args $1 second $2 third $3"
 #!/bin/sh
-set -x
-#set +x
+>log
+sudo /home/satyan/ro/resource-optimizer/membalancer/membalancer  -f 25 -u -P 5908 -v1 -m 0.0001 -M 1 -r 2 100 -H -b -c 0-31,128-159 >>log 2>&1 &
+first_pid=$!
+echo $first_pid
+>sar_data
+sar 1 600 -o sar_data > /dev/null 2>&1 &
+second_pid=$!
+echo $second_pid
+>numactl_log
+sudo sync; echo 3 | sudo tee /proc/sys/vm/drop_caches; numactl --cpunodebind 0 --membind 1  /home/satyan/code/script/XSBench -s Large -g 32000 -l 2000 > numactl_log 2>&1 
+third_pid=$!
+echo $third_pid
+kill $first_pid
+kill $second_pid
 
-#spcial symbools
-# $$ $# $? $0
-echo "welcome"
-echo "enter val x="
-#reading from console
-#read x
-#echo "$x"
-var="4545646"
-echo $var
 
-echo $$
-#array in shell
-
-N[0]=1
-N[1]=2
-echo "${N[0]}"
-
-# external program to computes awk, expr
-#
-#val=2;
-#sum=`expr $val + 5`
-#echo $sum
-#i=1
-#while [ $i -lt 10 ];
-#do
-#i=`expr $i + 1`
-#echo "$i"
-#done
-NUM="1 2 3 4 5"
-
-for i in $NUM
-do
-    echo "$i"
-done
-var=2
-
-if [ $var -eq 2 ]
-then
- echo "same"
-else
- echo "not same"
-fi
-
-#unset var

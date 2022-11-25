@@ -1,0 +1,61 @@
+end (null) 
+ c1 10 , c2 1,2,3,4-10 
+number a 0 stride 1 
+number a 1 stride 1 
+number a 2 stride 1 
+number a 3 stride 1 
+number a 4 stride 1 
+number a 5 stride 1 
+number a 6 stride 1 
+number a 7 stride 1 
+number a 8 stride 1 
+number a 9 stride 1 
+number a 10 stride 1 
+p = 1,2,3,4-10 
+end  
+ c1 10 , c2 2,3,4-10 
+number a 1 stride 1 
+number a 2 stride 1 
+number a 3 stride 1 
+number a 4 stride 1 
+number a 5 stride 1 
+number a 6 stride 1 
+number a 7 stride 1 
+number a 8 stride 1 
+number a 9 stride 1 
+number a 10 stride 1 
+p = 2,3,4-10 
+end  
+ c1 10 , c2 3,4-10 
+number a 2 stride 1 
+number a 3 stride 1 
+number a 4 stride 1 
+number a 5 stride 1 
+number a 6 stride 1 
+number a 7 stride 1 
+number a 8 stride 1 
+number a 9 stride 1 
+number a 10 stride 1 
+p = 3,4-10 
+end  
+ c1 10 , c2 4-10 
+number a 3 stride 1 
+number a 4 stride 1 
+number a 5 stride 1 
+number a 6 stride 1 
+number a 7 stride 1 
+number a 8 stride 1 
+number a 9 stride 1 
+number a 10 stride 1 
+p = 4-10 
+end  
+ c1 10 , c2 (null) 
+number a 4 stride 1 
+number a 5 stride 1 
+number a 6 stride 1 
+number a 7 stride 1 
+number a 8 stride 1 
+number a 9 stride 1 
+number a 10 stride 1 
+p = (null) 
+str 0,1,2,3,4-10 

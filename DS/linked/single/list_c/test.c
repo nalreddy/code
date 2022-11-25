@@ -6,14 +6,18 @@ int main(void) {
 	int i;
 	List* list = makeList();
 
-	for( i = 1; i < 5; i++) {
-		addLast(i,list);
-	}
+	//for( i = 1; i < 5; i++) {
+	//	addLast(i,list);
+	//}
 
-	display(list);
+	addLast(0,list);
+	addLast(1,list);
+//	display(list);
 //	reverse(list);
-	listMid(list);
+//	listMid(list);
 	display(list);
+	makeLoop(list);
+	detectLoop(list);
 	//delList(list);
 
 	return 0;
