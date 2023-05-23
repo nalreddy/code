@@ -12,7 +12,6 @@ int count = 0;
 void* odd()
 {
     while (count < MAX) {
-
         pthread_mutex_lock(&count_mutex);
         if ((count % 2 ) == 0) {
             pthread_cond_wait(&condition_var, &count_mutex);
@@ -27,7 +26,6 @@ void* odd()
 void* even()
 {
     while (count < MAX) {
-
         pthread_mutex_lock(&count_mutex);
         if ((count % 2 ) != 0) {
             pthread_cond_wait(&condition_var, &count_mutex);
