@@ -1,10 +1,12 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <limits.h>
 
-void main()
+int main()
 {
-//    char *str="{\"a\":1}";
-    char *str="abc";
+	unsigned long value = 18446744073709551615ul;
+	printf("SIZEOF ULONG: %lu", sizeof(unsigned long));
+	printf("VALUE: %lu", value);
+	printf("max %lu \n", sizeof(ULONG_MAX));
 
-    printf("%ld " , strlen(str));
+	return 0;
 }

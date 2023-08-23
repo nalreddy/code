@@ -1,0 +1,1 @@
+cmd_/home/skurichi/mywork/kmod/Module.symvers := sed 's/ko$$/o/' /home/skurichi/mywork/kmod/modules.order | scripts/mod/modpost     -o /home/skurichi/mywork/kmod/Module.symvers -e -i Module.symvers   -T -
