@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 int main()
 {
 	unordered_map<char, pair<int,int>> mp;
