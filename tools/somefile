@@ -1,0 +1,4 @@
+su - postgres -c "numactl --physcpubind=0 -m 1 /home/amd/shyam/postgresql/install-shyam-gcc/bin/pg_ctl -D /data/postgres/pg14-aocc128-tpch-sf100/ -l /data/postgres/pg14-aocc128-tpch-sf100/logfile start"
+
+
+numactl --physcpubind=3 -m 0 /home/ssarkar/redis/redis_install_gcc/bin/redis-server /etc/redis/redis.conf

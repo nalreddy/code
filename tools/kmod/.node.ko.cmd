@@ -1,0 +1,1 @@
+cmd_/home/skurichi/mywork/kmod/node.ko := ld -r -m elf_x86_64 --build-id=sha1  -T scripts/module.lds -o /home/skurichi/mywork/kmod/node.ko /home/skurichi/mywork/kmod/node.o /home/skurichi/mywork/kmod/node.mod.o;  true
